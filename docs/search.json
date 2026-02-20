@@ -1,0 +1,76 @@
+[
+  {
+    "objectID": "draft-data-doc.html",
+    "href": "draft-data-doc.html",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "A.1 1) Gulf Water Temperature Data (Dauphin Island, AL)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#gulf-water-temperature-data-dauphin-island-al",
+    "href": "draft-data-doc.html#gulf-water-temperature-data-dauphin-island-al",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "A.1.1 Dataset\nPrimary dataset: NOAA National Data Buoy Center (NDBC) station DPHA1 US Department of Commerce (n.d.) Variable of interest: WTMP = Water Temperature (degrees Celsius)\n\n\nA.1.2 Who collected the data\nThe data was collected and maintained by the National Oceanic and Atmospheric Administration (NOAA), specifically the National Data Buoy Center (NDBC).\n\n\nA.1.3 Why the data was collected\nNDBC stations provide operational marine observations to support weather forecasting, ocean monitoring, navigation safety, and climate research.\n\n\nA.1.4 What the data is about\nThe dataset contains time-series oceanographic observations from station DPHA1 located near Dauphin Island, Alabama (30.251°N, 88.078°W).\nKey variables relevant to this project:\n\nYY, MM, DD, hh, mm — date and time components\n\nWTMP (°C) — water temperature\n\nOther available variables include air temperature, wind speed, wind direction, pressure, and tide height.\n\n\nA.1.5 When the data was collected\nThe station provides multi-year historical observations. Data are typically recorded at 30-minute or hourly intervals. Historical records extend back multiple decades, allowing trend analysis.\n\n\nA.1.6 Where the data was collected\nDauphin Island Sea Lab station (DPHA1), Alabama, Gulf of Mexico.\n\n\nA.1.7 How the data was collected\nWater temperature is measured using in-situ oceanographic sensors mounted at the monitoring station. NOAA maintains and calibrates these instruments to meet operational standards.\n\n\nA.1.8 Structure of the data\nThe dataset is provided as a plain text or downloadable table format. Each row represents a timestamped observation. Columns represent meteorological and oceanographic variables.\n\n\nA.1.9 Formatting decisions and missing values\nMissing values are encoded using sentinel values such as 999, 99.0, or blank entries. These must be cleaned before analysis.\nWater temperature is recorded in degrees Celsius and will need to be converted to Fahrenheit to evaluate the 85°F operational threshold.\n\n\nA.1.10 Data validation\nQuality checks should include:\n\nPercentage of missing values in WTMP\nDetection of implausible values\nIdentification of gaps in the time series",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#electricity-demand-data-alabama-southeast-region",
+    "href": "draft-data-doc.html#electricity-demand-data-alabama-southeast-region",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "A.2 2) Electricity Demand Data (Alabama / Southeast Region)",
+    "text": "A.2 2) Electricity Demand Data (Alabama / Southeast Region)\n\nA.2.1 Dataset\nPrimary dataset: U.S. Energy Information Administration (EIA) Form EIA-930 Hourly Grid Monitor\nVariable of interest: Demand (MW) — actual electricity demand\n\n\nA.2.2 Who collected the data\nThe data are collected by the U.S. Energy Information Administration (EIA) through Form EIA-930 reporting from balancing authorities.\n\n\nA.2.3 Why the data exist\nThe dataset supports public transparency and monitoring of real-time electric grid conditions, including demand, generation, and interchange.\n\n\nA.2.4 What the data are about\nThe dataset contains hourly electricity demand and generation statistics for balancing authorities across the United States.\nKey variables:\n\nBalancing Authority\nLocal Time at End of Hour\nDemand (MW)\nDemand Forecast (MW)\nNet Generation (MW)\n\nFor this project, demand data for Alabama or the relevant balancing authority serving the Gulf region will be used.\n\n\nA.2.5 When the data were collected\nData are available at hourly resolution and updated daily. Historical data extend back multiple years.\n\n\nA.2.6 Where the data were collected\nReported at the balancing authority level covering Alabama and the Southeast region.\n\n\nA.2.7 How the data were collected\nBalancing authorities report operational grid data to EIA through automated submissions under Form EIA-930.\n\n\nA.2.8 Structure of the data\nThe dataset is available as a CSV file. Each row represents one balancing authority-hour observation. Columns represent demand, generation, and related grid measures.\n\n\nA.2.9 Formatting decisions and missing values\nSome records may include imputed or adjusted values. The analysis must document whether raw or adjusted demand is used.\nTimezone differences between water temperature data and electricity demand data must be reconciled before merging.\n\n\nA.2.10 Data validation\nQuality checks should include:\n\nMissingness rates by balancing authority\nDetection of negative or implausible demand values\nTime continuity verification",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#relevance-to-scenario",
+    "href": "draft-data-doc.html#relevance-to-scenario",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "A.3 Relevance to Scenario",
+    "text": "A.3 Relevance to Scenario\nThe NOAA water temperature dataset allows estimation of the frequency and duration of periods when Gulf water temperature exceeds 85°F, triggering reduced operating capacity.\nThe EIA electricity demand dataset allows assessment of whether these high-temperature periods coincide with peak electricity demand.\nTogether, these datasets are sufficient to evaluate operational risk over the next five years by estimating exceedance probabilities and examining seasonal demand alignment.\n\n\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric\nAdministration. n.d. “NDBC Station Page.”\nhttps://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed\nFebruary 20, 2026.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

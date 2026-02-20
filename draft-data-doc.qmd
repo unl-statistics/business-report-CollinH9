@@ -1,3 +1,105 @@
 ---
 title: "Draft: Data Documentation"
 ---
+
+## 1) Gulf Water Temperature Data (Dauphin Island, AL)
+
+### Dataset
+
+Primary dataset: NOAA National Data Buoy Center (NDBC) station DPHA1
+Variable of interest: `WTMP` = Water Temperature (degrees Celsius)
+
+### Who collected the data
+
+The data was collected by the National Oceanic and Atmospheric Administration (NOAA), specifically the National Data Buoy Center (NDBC).
+
+### Why the data was collected
+
+NDBC stations provide operational marine observations to help with weather forecasting, ocean monitoring, navigation safety, and climate research.
+
+### What the data is about
+
+The dataset contains observations from station DPHA1 near Dauphin Island, Alabama.
+
+Key variables relevant to this project:
+
+- `YY, MM, DD, hh, mm` — date and time components  
+- `WTMP` (°C) — water temperature  
+
+### When the data was collected
+
+Data is typically recorded at hourly intervals. Records go back back multiple decades, allowing trend analysis.
+
+### Where the data was collected
+
+Dauphin Island Sea Lab station (DPHA1), Alabama, Gulf of Mexico.
+
+### How the data was collected
+
+Water temperature is measured using sensors mounted at the monitoring station.
+
+### Structure of the data
+
+The dataset is provided as a table. Each row represents a timestamped observation. Columns represent variables of interest that can be made into graphs.
+
+### Formatting decisions and missing values
+
+Missing values are encoded using blank entries. These must be cleaned before analysis.
+
+Water temperature is recorded in degrees Celsius and will need to be converted to Fahrenheit to evaluate the 85°F threshold.
+
+---
+
+## 2) Electricity Demand Data (Alabama / Southeast Region)
+
+### Dataset
+
+Primary dataset: U.S. Energy Information Administration (EIA) Form EIA-930 Hourly Grid Monitor  
+Variable of interest: `Demand (MW)` — actual electricity demand
+
+### Who collected the data
+
+The data was collected by the U.S. Energy Information Administration (EIA) through Form EIA-930 reporting from balancing authorities.
+
+### Why the data exist
+
+The dataset provides public transparency.
+
+### What the data are about
+
+The dataset contains hourly electricity demand and generation statistics for balancing authorities across the United States.
+
+Key variables:
+
+- `Balancing Authority`
+- `Local Time at End of Hour`
+- `Demand (MW)`
+- `Demand Forecast (MW)`
+- `Net Generation (MW)`
+
+For this project, demand data for Alabama or the relevant balancing authority serving the Gulf region will be used.
+
+### When the data were collected
+
+Data is available on an hour to hour basis and updated daily. Historical data extends back multiple years.
+
+### Where the data were collected
+
+Reported at the balancing authority level covering Alabama and the Southeast region.
+
+### How the data were collected
+
+Balancing authorities report operational grid data to EIA through automated submissions under Form EIA-930.
+
+### Structure of the data
+
+The dataset is presented graphically, but it's available in many file formats such as CSV. Each row represents one balancing authority-hour observation. Columns represent demand, generation, and related grid measures.
+
+
+---
+
+## Relevance to Scenario
+
+The NOAA water temperature dataset let's us estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.
+
+The EIA electricity demand dataset allows us to see whether these high-temperature periods correlate with peak electricity demand.
