@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -174,8 +209,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#study-sample-characteristics-and-descriptive-statistics" id="toc-study-sample-characteristics-and-descriptive-statistics" class="nav-link active" data-scroll-target="#study-sample-characteristics-and-descriptive-statistics"><span class="header-section-number">B.1</span> Study Sample Characteristics and Descriptive Statistics</a></li>
+  <li><a href="#water-temperature-data" id="toc-water-temperature-data" class="nav-link" data-scroll-target="#water-temperature-data"><span class="header-section-number">B.2</span> Water Temperature Data</a></li>
+  <li><a href="#electricity-demand-data" id="toc-electricity-demand-data" class="nav-link" data-scroll-target="#electricity-demand-data"><span class="header-section-number">B.3</span> Electricity Demand Data</a></li>
+  <li><a href="#primary-analysis" id="toc-primary-analysis" class="nav-link" data-scroll-target="#primary-analysis"><span class="header-section-number">B.4</span> Primary Analysis</a></li>
+  <li><a href="#secondary-analysis" id="toc-secondary-analysis" class="nav-link" data-scroll-target="#secondary-analysis"><span class="header-section-number">B.5</span> Secondary Analysis</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -199,8 +244,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="study-sample-characteristics-and-descriptive-statistics" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="study-sample-characteristics-and-descriptive-statistics"><span class="header-section-number">B.1</span> Study Sample Characteristics and Descriptive Statistics</h2>
+<p>The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama, and electricity demand data from the U.S. Energy Information Administration (EIA).</p>
+</section>
+<section id="water-temperature-data" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="water-temperature-data"><span class="header-section-number">B.2</span> Water Temperature Data</h2>
+<p>The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
+<p>The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.</p>
+</section>
+<section id="electricity-demand-data" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="electricity-demand-data"><span class="header-section-number">B.3</span> Electricity Demand Data</h2>
+<p>The electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.</p>
+</section>
+<section id="primary-analysis" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="primary-analysis"><span class="header-section-number">B.4</span> Primary Analysis</h2>
+<p>The primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.</p>
+<p>The analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours or days.</p>
+<p>Figure 1 shows the time series of water temperature observations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(temp_clean, <span class="fu">aes</span>(datetime, temp_f)) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">85</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Water Temperature at Dauphin Island"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Time"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Temperature (°F)"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="draft-results_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="secondary-analysis" class="level2" data-number="B.5">
+<h2 data-number="B.5" class="anchored" data-anchor-id="secondary-analysis"><span class="header-section-number">B.5</span> Secondary Analysis</h2>
+<p>The secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.</p>
+<p>Dates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Red points in Figure 2 indicate days when water temperatures exceeded the 85°F threshold.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>high_temp_dates <span class="ot">&lt;-</span> temp_clean <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(temp_f <span class="sc">&gt;</span> <span class="dv">85</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(datetime)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(date)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>daily_demand <span class="ot">&lt;-</span> demand_clean <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(datetime)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">daily_demand_mw =</span> <span class="fu">mean</span>(demand_mw, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(daily_demand, <span class="fu">aes</span>(date, daily_demand_mw)) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> daily_demand <span class="sc">%&gt;%</span> <span class="fu">filter</span>(date <span class="sc">%in%</span> high_temp_dates<span class="sc">$</span>date),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(date, daily_demand_mw), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Daily Electricity Demand with High Water Temperature Days Highlighted"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Demand (MW)"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="draft-results_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>High water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 2 shows that many of these days coincide with periods of higher electricity demand, but interestingly show these days also occur during local minimums.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

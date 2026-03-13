@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -210,7 +190,6 @@ div.csl-indent {
   <li><a href="#how-the-data-was-collected" id="toc-how-the-data-was-collected" class="nav-link" data-scroll-target="#how-the-data-was-collected"><span class="header-section-number">A.1.7</span> How the data was collected</a></li>
   <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="header-section-number">A.1.8</span> Structure of the data</a></li>
   <li><a href="#formatting-decisions-and-missing-values" id="toc-formatting-decisions-and-missing-values" class="nav-link" data-scroll-target="#formatting-decisions-and-missing-values"><span class="header-section-number">A.1.9</span> Formatting decisions and missing values</a></li>
-  <li><a href="#data-validation" id="toc-data-validation" class="nav-link" data-scroll-target="#data-validation"><span class="header-section-number">A.1.10</span> Data validation</a></li>
   </ul></li>
   <li><a href="#electricity-demand-data-alabama-southeast-region" id="toc-electricity-demand-data-alabama-southeast-region" class="nav-link" data-scroll-target="#electricity-demand-data-alabama-southeast-region"><span class="header-section-number">A.2</span> 2) Electricity Demand Data (Alabama / Southeast Region)</a>
   <ul class="collapse">
@@ -222,8 +201,6 @@ div.csl-indent {
   <li><a href="#where-the-data-were-collected" id="toc-where-the-data-were-collected" class="nav-link" data-scroll-target="#where-the-data-were-collected"><span class="header-section-number">A.2.6</span> Where the data were collected</a></li>
   <li><a href="#how-the-data-were-collected" id="toc-how-the-data-were-collected" class="nav-link" data-scroll-target="#how-the-data-were-collected"><span class="header-section-number">A.2.7</span> How the data were collected</a></li>
   <li><a href="#structure-of-the-data-1" id="toc-structure-of-the-data-1" class="nav-link" data-scroll-target="#structure-of-the-data-1"><span class="header-section-number">A.2.8</span> Structure of the data</a></li>
-  <li><a href="#formatting-decisions-and-missing-values-1" id="toc-formatting-decisions-and-missing-values-1" class="nav-link" data-scroll-target="#formatting-decisions-and-missing-values-1"><span class="header-section-number">A.2.9</span> Formatting decisions and missing values</a></li>
-  <li><a href="#data-validation-1" id="toc-data-validation-1" class="nav-link" data-scroll-target="#data-validation-1"><span class="header-section-number">A.2.10</span> Data validation</a></li>
   </ul></li>
   <li><a href="#relevance-to-scenario" id="toc-relevance-to-scenario" class="nav-link" data-scroll-target="#relevance-to-scenario"><span class="header-section-number">A.3</span> Relevance to Scenario</a></li>
   </ul>
@@ -255,30 +232,29 @@ div.csl-indent {
 <h2 data-number="A.1" class="anchored" data-anchor-id="gulf-water-temperature-data-dauphin-island-al"><span class="header-section-number">A.1</span> 1) Gulf Water Temperature Data (Dauphin Island, AL)</h2>
 <section id="dataset" class="level3" data-number="A.1.1">
 <h3 data-number="A.1.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">A.1.1</span> Dataset</h3>
-<p>Primary dataset: NOAA National Data Buoy Center (NDBC) station DPHA1 <span class="citation" data-cites="usdepartmentofcommerceNDBCStationPage">US Department of Commerce (<a href="references.html#ref-usdepartmentofcommerceNDBCStationPage" role="doc-biblioref">n.d.</a>)</span> Variable of interest: <code>WTMP</code> = Water Temperature (degrees Celsius)</p>
+<p>Primary dataset: NOAA National Data Buoy Center (NDBC) station DPHA1 Variable of interest: <code>WTMP</code> = Water Temperature (degrees Celsius)</p>
 </section>
 <section id="who-collected-the-data" class="level3" data-number="A.1.2">
 <h3 data-number="A.1.2" class="anchored" data-anchor-id="who-collected-the-data"><span class="header-section-number">A.1.2</span> Who collected the data</h3>
-<p>The data was collected and maintained by the National Oceanic and Atmospheric Administration (NOAA), specifically the National Data Buoy Center (NDBC).</p>
+<p>The data was collected by the National Oceanic and Atmospheric Administration (NOAA), specifically the National Data Buoy Center (NDBC).</p>
 </section>
 <section id="why-the-data-was-collected" class="level3" data-number="A.1.3">
 <h3 data-number="A.1.3" class="anchored" data-anchor-id="why-the-data-was-collected"><span class="header-section-number">A.1.3</span> Why the data was collected</h3>
-<p>NDBC stations provide operational marine observations to support weather forecasting, ocean monitoring, navigation safety, and climate research.</p>
+<p>NDBC stations provide operational marine observations to help with weather forecasting, ocean monitoring, navigation safety, and climate research.</p>
 </section>
 <section id="what-the-data-is-about" class="level3" data-number="A.1.4">
 <h3 data-number="A.1.4" class="anchored" data-anchor-id="what-the-data-is-about"><span class="header-section-number">A.1.4</span> What the data is about</h3>
-<p>The dataset contains time-series oceanographic observations from station DPHA1 located near Dauphin Island, Alabama (30.251°N, 88.078°W).</p>
+<p>The dataset contains observations from station DPHA1 near Dauphin Island, Alabama.</p>
 <p>Key variables relevant to this project:</p>
 <ul>
 <li><code>YY, MM, DD, hh, mm</code> — date and time components<br>
 </li>
 <li><code>WTMP</code> (°C) — water temperature</li>
 </ul>
-<p>Other available variables include air temperature, wind speed, wind direction, pressure, and tide height.</p>
 </section>
 <section id="when-the-data-was-collected" class="level3" data-number="A.1.5">
 <h3 data-number="A.1.5" class="anchored" data-anchor-id="when-the-data-was-collected"><span class="header-section-number">A.1.5</span> When the data was collected</h3>
-<p>The station provides multi-year historical observations. Data are typically recorded at 30-minute or hourly intervals. Historical records extend back multiple decades, allowing trend analysis.</p>
+<p>Data is typically recorded at hourly intervals. Records go back back multiple decades, allowing trend analysis.</p>
 </section>
 <section id="where-the-data-was-collected" class="level3" data-number="A.1.6">
 <h3 data-number="A.1.6" class="anchored" data-anchor-id="where-the-data-was-collected"><span class="header-section-number">A.1.6</span> Where the data was collected</h3>
@@ -286,25 +262,16 @@ div.csl-indent {
 </section>
 <section id="how-the-data-was-collected" class="level3" data-number="A.1.7">
 <h3 data-number="A.1.7" class="anchored" data-anchor-id="how-the-data-was-collected"><span class="header-section-number">A.1.7</span> How the data was collected</h3>
-<p>Water temperature is measured using in-situ oceanographic sensors mounted at the monitoring station. NOAA maintains and calibrates these instruments to meet operational standards.</p>
+<p>Water temperature is measured using sensors mounted at the monitoring station.</p>
 </section>
 <section id="structure-of-the-data" class="level3" data-number="A.1.8">
 <h3 data-number="A.1.8" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">A.1.8</span> Structure of the data</h3>
-<p>The dataset is provided as a plain text or downloadable table format. Each row represents a timestamped observation. Columns represent meteorological and oceanographic variables.</p>
+<p>The dataset is provided as a table. Each row represents a timestamped observation. Columns represent variables of interest that can be made into graphs.</p>
 </section>
 <section id="formatting-decisions-and-missing-values" class="level3" data-number="A.1.9">
 <h3 data-number="A.1.9" class="anchored" data-anchor-id="formatting-decisions-and-missing-values"><span class="header-section-number">A.1.9</span> Formatting decisions and missing values</h3>
-<p>Missing values are encoded using sentinel values such as <code>999</code>, <code>99.0</code>, or blank entries. These must be cleaned before analysis.</p>
-<p>Water temperature is recorded in degrees Celsius and will need to be converted to Fahrenheit to evaluate the 85°F operational threshold.</p>
-</section>
-<section id="data-validation" class="level3" data-number="A.1.10">
-<h3 data-number="A.1.10" class="anchored" data-anchor-id="data-validation"><span class="header-section-number">A.1.10</span> Data validation</h3>
-<p>Quality checks should include:</p>
-<ul>
-<li>Percentage of missing values in <code>WTMP</code></li>
-<li>Detection of implausible values</li>
-<li>Identification of gaps in the time series</li>
-</ul>
+<p>Missing values are encoded using blank entries. These must be cleaned before analysis.</p>
+<p>Water temperature is recorded in degrees Celsius and will need to be converted to Fahrenheit to evaluate the 85°F threshold.</p>
 <hr>
 </section>
 </section>
@@ -317,11 +284,11 @@ Variable of interest: <code>Demand (MW)</code> — actual electricity demand</p>
 </section>
 <section id="who-collected-the-data-1" class="level3" data-number="A.2.2">
 <h3 data-number="A.2.2" class="anchored" data-anchor-id="who-collected-the-data-1"><span class="header-section-number">A.2.2</span> Who collected the data</h3>
-<p>The data are collected by the U.S. Energy Information Administration (EIA) through Form EIA-930 reporting from balancing authorities.</p>
+<p>The data was collected by the U.S. Energy Information Administration (EIA) through Form EIA-930 reporting from balancing authorities.</p>
 </section>
 <section id="why-the-data-exist" class="level3" data-number="A.2.3">
 <h3 data-number="A.2.3" class="anchored" data-anchor-id="why-the-data-exist"><span class="header-section-number">A.2.3</span> Why the data exist</h3>
-<p>The dataset supports public transparency and monitoring of real-time electric grid conditions, including demand, generation, and interchange.</p>
+<p>The dataset provides public transparency.</p>
 </section>
 <section id="what-the-data-are-about" class="level3" data-number="A.2.4">
 <h3 data-number="A.2.4" class="anchored" data-anchor-id="what-the-data-are-about"><span class="header-section-number">A.2.4</span> What the data are about</h3>
@@ -338,7 +305,7 @@ Variable of interest: <code>Demand (MW)</code> — actual electricity demand</p>
 </section>
 <section id="when-the-data-were-collected" class="level3" data-number="A.2.5">
 <h3 data-number="A.2.5" class="anchored" data-anchor-id="when-the-data-were-collected"><span class="header-section-number">A.2.5</span> When the data were collected</h3>
-<p>Data are available at hourly resolution and updated daily. Historical data extend back multiple years.</p>
+<p>Data is available on an hour to hour basis and updated daily. Historical data extends back multiple years.</p>
 </section>
 <section id="where-the-data-were-collected" class="level3" data-number="A.2.6">
 <h3 data-number="A.2.6" class="anchored" data-anchor-id="where-the-data-were-collected"><span class="header-section-number">A.2.6</span> Where the data were collected</h3>
@@ -350,36 +317,16 @@ Variable of interest: <code>Demand (MW)</code> — actual electricity demand</p>
 </section>
 <section id="structure-of-the-data-1" class="level3" data-number="A.2.8">
 <h3 data-number="A.2.8" class="anchored" data-anchor-id="structure-of-the-data-1"><span class="header-section-number">A.2.8</span> Structure of the data</h3>
-<p>The dataset is available as a CSV file. Each row represents one balancing authority-hour observation. Columns represent demand, generation, and related grid measures.</p>
-</section>
-<section id="formatting-decisions-and-missing-values-1" class="level3" data-number="A.2.9">
-<h3 data-number="A.2.9" class="anchored" data-anchor-id="formatting-decisions-and-missing-values-1"><span class="header-section-number">A.2.9</span> Formatting decisions and missing values</h3>
-<p>Some records may include imputed or adjusted values. The analysis must document whether raw or adjusted demand is used.</p>
-<p>Timezone differences between water temperature data and electricity demand data must be reconciled before merging.</p>
-</section>
-<section id="data-validation-1" class="level3" data-number="A.2.10">
-<h3 data-number="A.2.10" class="anchored" data-anchor-id="data-validation-1"><span class="header-section-number">A.2.10</span> Data validation</h3>
-<p>Quality checks should include:</p>
-<ul>
-<li>Missingness rates by balancing authority</li>
-<li>Detection of negative or implausible demand values</li>
-<li>Time continuity verification</li>
-</ul>
+<p>The dataset is presented graphically, but it’s available in many file formats such as CSV. Each row represents one balancing authority-hour observation. Columns represent demand, generation, and related grid measures.</p>
 <hr>
 </section>
 </section>
 <section id="relevance-to-scenario" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="relevance-to-scenario"><span class="header-section-number">A.3</span> Relevance to Scenario</h2>
-<p>The NOAA water temperature dataset allows estimation of the frequency and duration of periods when Gulf water temperature exceeds 85°F, triggering reduced operating capacity.</p>
-<p>The EIA electricity demand dataset allows assessment of whether these high-temperature periods coincide with peak electricity demand.</p>
-<p>Together, these datasets are sufficient to evaluate operational risk over the next five years by estimating exceedance probabilities and examining seasonal demand alignment.</p>
+<p>The NOAA water temperature dataset let’s us estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.</p>
+<p>The EIA electricity demand dataset allows us to see whether these high-temperature periods correlate with peak electricity demand.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-usdepartmentofcommerceNDBCStationPage" class="csl-entry" role="listitem">
-US Department of Commerce, National Oceanic and Atmospheric Administration. n.d. <span>“<span>NDBC Station Page</span>.”</span> https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
