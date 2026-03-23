@@ -6,11 +6,21 @@ title: "Draft: Results"
 
 The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama, and electricity demand data from the U.S. Energy Information Administration (EIA).
 
+::: callout-note
+
+Figures and tables should have captions and should have dynamic numbering produced by quarto. I've fixed the first figure, the rest are yours to update (along with an appropriate caption for figure 1).
+
+Every figure and table should be referenced appropriately in the text using dynamic references.
+
+:::
+
 ## Water Temperature Data
 
-The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
+The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
 
 ```{r, include=FALSE}
+#| label: fig-dauphin-island-temp
+#| fig-cap: A caption for this figure.
 library(tidyverse)
 library(lubridate)
 
@@ -107,4 +117,17 @@ ggplot(daily_demand, aes(date, daily_demand_mw)) +
 
 High water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 2 shows that many of these days coincide with periods of higher electricity demand, but interestingly show these days also occur during local minimums. 
 
+::: callout-note
+
+You might want to generate both pictures and line them up (facet by variable, so that you have two rows), with some red highlighting behind the temperature line (a rectangle with ymin = -Inf and ymax = Inf, fill="red", alpha=0.1 or so), where the highlighting then extends to the demand plot.
+That would make it easier to see a relationship.
+
+:::
+
 ## Note to add second half of 2025 later
+
+::: callout-note
+
+Make sure you're finishing your results section by evaluating what the results mean in the context of the problem.
+
+:::
