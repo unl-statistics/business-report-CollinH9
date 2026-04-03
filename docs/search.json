@@ -37,7 +37,7 @@
     "href": "draft-data-doc.html#relevance-to-scenario",
     "title": "Appendix A — Draft: Data Documentation",
     "section": "A.3 Relevance to Scenario",
-    "text": "A.3 Relevance to Scenario\nThe NOAA water temperature dataset let’s us estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.\nThe EIA electricity demand dataset allows us to see whether these high-temperature periods correlate with peak electricity demand.",
+    "text": "A.3 Relevance to Scenario\nThe NOAA water temperature dataset allows us to estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.\nThe EIA electricity demand dataset allows us to see whether these high-temperature periods correlate with peak electricity demand.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
@@ -89,7 +89,7 @@
     "href": "draft-results.html#water-temperature-data",
     "title": "Appendix B — Draft: Results",
     "section": "B.2 Water Temperature Data",
-    "text": "B.2 Water Temperature Data\nThe water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.\nThe data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.",
+    "text": "B.2 Water Temperature Data\nThe water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in ?fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.\nThe data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
@@ -122,10 +122,65 @@
     "href": "draft-results.html#secondary-analysis",
     "title": "Appendix B — Draft: Results",
     "section": "B.5 Secondary Analysis",
-    "text": "B.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Red points in Figure 2 indicate days when water temperatures exceeded the 85°F threshold.\n\nhigh_temp_dates &lt;- temp_clean %&gt;%\n  filter(temp_f &gt; 85) %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  distinct(date)\n\ndaily_demand &lt;- demand_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(daily_demand_mw = mean(demand_mw, na.rm = TRUE))\n\nggplot(daily_demand, aes(date, daily_demand_mw)) +\n  geom_line(color = \"blue\") +\n  geom_point(data = daily_demand %&gt;% filter(date %in% high_temp_dates$date),\n             aes(date, daily_demand_mw), color = \"red\", size = 1.5) +\n  labs(\n    title = \"Daily Electricity Demand with High Water Temperature Days Highlighted\",\n    x = \"Date\",\n    y = \"Demand (MW)\"\n  )\n\n\n\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 2 shows that many of these days coincide with periods of higher electricity demand, but interestingly show these days also occur during local minimums.",
+    "text": "B.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Red points in Figure 2 indicate days when water temperatures exceeded the 85°F threshold.\n\nhigh_temp_dates &lt;- temp_clean %&gt;%\n  filter(temp_f &gt; 85) %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  distinct(date)\n\ndaily_demand &lt;- demand_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(daily_demand_mw = mean(demand_mw, na.rm = TRUE))\n\nggplot(daily_demand, aes(date, daily_demand_mw)) +\n  geom_line(color = \"blue\") +\n  geom_point(data = daily_demand %&gt;% filter(date %in% high_temp_dates$date),\n             aes(date, daily_demand_mw), color = \"red\", size = 1.5) +\n  labs(\n    title = \"Daily Electricity Demand with High Water Temperature Days Highlighted\",\n    x = \"Date\",\n    y = \"Demand (MW)\"\n  )\n\n\n\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 2 shows that many of these days coincide with periods of higher electricity demand, but interestingly show these days also occur during local minimums.\n\n\n\n\n\n\nNote\n\n\n\nYou might want to generate both pictures and line them up (facet by variable, so that you have two rows), with some red highlighting behind the temperature line (a rectangle with ymin = -Inf and ymax = Inf, fill=“red”, alpha=0.1 or so), where the highlighting then extends to the demand plot. That would make it easier to see a relationship.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
+    ]
+  },
+  {
+    "objectID": "draft-exec-summary.html",
+    "href": "draft-exec-summary.html",
+    "title": "Appendix D — Draft: Executive Summary",
+    "section": "",
+    "text": "This report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.\nTwo publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned, and summarized using graphically and descriptively.\nThe results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.\nConclusion: The plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.\nRecommendations: - Evaluate possible other cooling strategies to reduce dependence on the gulf - Incorporate temperature risk into planning for future operations\nOverall, this analysis indicates that rising water temperatures are a risk that should be accounted for in future planning and decision-making.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#footnotes",
+    "href": "draft-data-doc.html#footnotes",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "This is how you add a footnote in quarto↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-results.html#study-sample-characteristics-and-descriptive-statistics",
+    "href": "draft-results.html#study-sample-characteristics-and-descriptive-statistics",
+    "title": "Appendix B — Draft: Results",
+    "section": "",
+    "text": "Note\n\n\n\nFigures and tables should have captions and should have dynamic numbering produced by quarto. I’ve fixed the first figure, the rest are yours to update (along with an appropriate caption for figure 1).\nEvery figure and table should be referenced appropriately in the text using dynamic references.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
+    ]
+  },
+  {
+    "objectID": "draft-results.html#note-to-add-second-half-of-2025-later",
+    "href": "draft-results.html#note-to-add-second-half-of-2025-later",
+    "title": "Appendix B — Draft: Results",
+    "section": "B.6 Note to add second half of 2025 later",
+    "text": "B.6 Note to add second half of 2025 later\n\n\n\n\n\n\nNote\n\n\n\nMake sure you’re finishing your results section by evaluating what the results mean in the context of the problem.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
+    ]
+  },
+  {
+    "objectID": "draft-intro-conclusions.html",
+    "href": "draft-intro-conclusions.html",
+    "title": "Appendix C — Draft: Intro/Conclusions",
+    "section": "",
+    "text": "D Introduction\nElectric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. In addition, electricity demand tends to increase during the summer due to increased cooling needs. This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) and the U.S. Energy Information Administration (EIA) are analyzed to evaluate temperature and demand trends.\n\n\nE Conclusion\nThis analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, will be forced to operate at reduced capacity due to elevated water temperatures. The results show that water temperatures exceeding 85°F occur primarily during summer months.\nThese high temperature periods overlap with times of increased electricity demand. This suggests that the plant may face increased strain during critical times.\nOverall, the findings indicate risk of reduced operating capacity within the next five years. This risk is most clear during peak summer demand, when system resilience is most important.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
     ]
   }
 ]

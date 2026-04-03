@@ -219,6 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#electricity-demand-data" id="toc-electricity-demand-data" class="nav-link" data-scroll-target="#electricity-demand-data"><span class="header-section-number">B.3</span> Electricity Demand Data</a></li>
   <li><a href="#primary-analysis" id="toc-primary-analysis" class="nav-link" data-scroll-target="#primary-analysis"><span class="header-section-number">B.4</span> Primary Analysis</a></li>
   <li><a href="#secondary-analysis" id="toc-secondary-analysis" class="nav-link" data-scroll-target="#secondary-analysis"><span class="header-section-number">B.5</span> Secondary Analysis</a></li>
+  <li><a href="#note-to-add-second-half-of-2025-later" id="toc-note-to-add-second-half-of-2025-later" class="nav-link" data-scroll-target="#note-to-add-second-half-of-2025-later"><span class="header-section-number">B.6</span> Note to add second half of 2025 later</a></li>
   </ul>
 </nav>
     </div>
@@ -247,10 +248,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="study-sample-characteristics-and-descriptive-statistics" class="level2" data-number="B.1">
 <h2 data-number="B.1" class="anchored" data-anchor-id="study-sample-characteristics-and-descriptive-statistics"><span class="header-section-number">B.1</span> Study Sample Characteristics and Descriptive Statistics</h2>
 <p>The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama, and electricity demand data from the U.S. Energy Information Administration (EIA).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Figures and tables should have captions and should have dynamic numbering produced by quarto. I’ve fixed the first figure, the rest are yours to update (along with an appropriate caption for figure 1).</p>
+<p>Every figure and table should be referenced appropriately in the text using dynamic references.</p>
+</div>
+</div>
 </section>
 <section id="water-temperature-data" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="water-temperature-data"><span class="header-section-number">B.2</span> Water Temperature Data</h2>
-<p>The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
+<p>The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in <span class="quarto-unresolved-ref">?fig-dauphin-island-temp</span>. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
 <p>The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.</p>
 </section>
 <section id="electricity-demand-data" class="level2" data-number="B.3">
@@ -313,6 +328,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>High water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 2 shows that many of these days coincide with periods of higher electricity demand, but interestingly show these days also occur during local minimums.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might want to generate both pictures and line them up (facet by variable, so that you have two rows), with some red highlighting behind the temperature line (a rectangle with ymin = -Inf and ymax = Inf, fill=“red”, alpha=0.1 or so), where the highlighting then extends to the demand plot. That would make it easier to see a relationship.</p>
+</div>
+</div>
+</section>
+<section id="note-to-add-second-half-of-2025-later" class="level2" data-number="B.6">
+<h2 data-number="B.6" class="anchored" data-anchor-id="note-to-add-second-half-of-2025-later"><span class="header-section-number">B.6</span> Note to add second half of 2025 later</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure you’re finishing your results section by evaluating what the results mean in the context of the problem.</p>
+</div>
+</div>
 
 
 </section>

@@ -228,6 +228,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How many of these values are missing? Is there any relationship between missingness?</p>
+<p>Can you be more specific? It might be reasonable to show the data (along with any missingness that occurs e.g.&nbsp;when the weather station is hit by a hurricane and loses power/sensors/etc.) in a plot.</p>
+<p>Cite your data sources as bibliographic references. Additionally include the URLs to the data as footnotes<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> the first time you mention e.g.&nbsp;how it was downloaded. Be explicit - your goal is to make sure someone can follow your instructions and reproduce your analysis.</p>
+<p>How far out is the data buoy? Is it too far to reasonably have a plant water intake at that location? You might want to address that, at least to say “well, there’s probably a slight shift in temperature below the surface depending on depth but this buoy is located at a place that is X miles out and where the water is Y feet/miles deep, while a plant water intake would likely be closer to shore where water temperatures might be slightly higher.”</p>
+</div>
+</div>
 <section id="gulf-water-temperature-data-dauphin-island-al" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="gulf-water-temperature-data-dauphin-island-al"><span class="header-section-number">A.1</span> 1) Gulf Water Temperature Data (Dauphin Island, AL)</h2>
 <section id="dataset" class="level3" data-number="A.1.1">
@@ -323,10 +339,16 @@ Variable of interest: <code>Demand (MW)</code> — actual electricity demand</p>
 </section>
 <section id="relevance-to-scenario" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="relevance-to-scenario"><span class="header-section-number">A.3</span> Relevance to Scenario</h2>
-<p>The NOAA water temperature dataset let’s us estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.</p>
+<p>The NOAA water temperature dataset allows us to estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.</p>
 <p>The EIA electricity demand dataset allows us to see whether these high-temperature periods correlate with peak electricity demand.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This is how you add a footnote in quarto<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
