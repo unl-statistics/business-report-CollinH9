@@ -190,7 +190,7 @@
     "section": "",
     "text": "3.1 Study Sample Characteristics and Descriptive Statistics\nThe analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama, and electricity demand data from the U.S. Energy Information Administration (EIA).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
@@ -210,7 +210,7 @@
     "section": "3.2 Water Temperature Data",
     "text": "3.2 Water Temperature Data\nThe water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in Figure 3.1. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.\nThe data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
@@ -220,7 +220,7 @@
     "section": "3.3 Electricity Demand Data",
     "text": "3.3 Electricity Demand Data\nThe electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
@@ -230,7 +230,7 @@
     "section": "3.4 Primary Analysis",
     "text": "3.4 Primary Analysis\nThe primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.\nThe analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.\nFigure 3.1 shows the time series of water temperature observations.\n\nggplot(temp_clean, aes(datetime, temp_f)) +\n  geom_line() +\n  geom_hline(yintercept = 85, linetype = \"dashed\") +\n  labs(\n    title = \"Water Temperature at Dauphin Island\",\n    x = \"Time\",\n    y = \"Temperature (°F)\"\n  )\n\n\n\n\n\n\n\nFigure 3.1: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.\n\n\n\n\n\n\nmean(temp_clean$temp_f &gt; 85)\n\n[1] 0.2017871\n\n\nSummary statistics reveal that water temperature exceeded 85°F on approximately 20% of observations.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
@@ -240,7 +240,7 @@
     "section": "3.5 Secondary Analysis",
     "text": "3.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in Figure 3.2 indicate days when water temperatures exceeded the 85°F threshold.\n\n#daily temp\ndaily_temp &lt;- temp_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(temp = max(temp_f, na.rm = TRUE))\n\n#daily demand\ndaily_demand &lt;- demand_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(demand = mean(demand_mw, na.rm = TRUE))\n\n#combine\nplot_data &lt;- left_join(daily_temp, daily_demand, by = \"date\")\n\n#reshape for faceting\nplot_long &lt;- plot_data %&gt;%\n  pivot_longer(\n    cols = c(temp, demand),\n    names_to = \"variable\",\n    values_to = \"value\"\n  )\n\nggplot(plot_long, aes(date, value)) +\n\n#highlight hot days\n  geom_rect(\n    data = plot_data %&gt;% filter(temp &gt; 85),\n    aes(xmin = date, xmax = date + 1, ymin = -Inf, ymax = Inf),\n    inherit.aes = FALSE,\n    fill = \"red\",\n    alpha = 0.1\n  ) +\n\n  geom_line() +\n\n  facet_wrap(~variable, ncol = 1, scales = \"free_y\") +\n\n  labs(\n    title = \"Water Temperature and Electricity Demand\",\n    x = \"Date\",\n    y = NULL\n  ) +\n\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 3.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 3.2 shows that many of these days coincide with periods of higher electricity demand.\nThese results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
