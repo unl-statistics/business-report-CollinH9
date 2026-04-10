@@ -8,4 +8,4 @@ This overlap creates potential stress on power systems when both supply constrai
 
 This study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.
 
-To address this question, data from the National Oceanic and Atmospheric Administration (NOAA) and the U.S. Energy Information Administration (EIA) are analyzed [how?] to evaluate temperature and demand trends.
+To address this question, data from the National Oceanic and Atmospheric Administration (NOAA) [@usdepartmentofcommerceNDBCStationPage] and the U.S. Energy Information Administration (EIA) [@EIA] are analyzed graphically to evaluate temperature and demand trends.

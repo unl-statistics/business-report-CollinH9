@@ -2,8 +2,6 @@
 title: "Conclusion"
 ---
 
-# Conclusion
-
 This analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, may have to operate at reduced capacity due to elevated Gulf water temperatures. Water temperature data from NOAA and electricity demand data from the EIA were used to identify periods where water temperature exceeded 85°F and compare those periods to electricity demand.
 
 The results show that water temperatures above 85°F occur primarily during summer months and often go on for consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.
@@ -24,6 +22,7 @@ Despite these limitations, the analysis provides reasonable information for plan
 :::
 
 Potential mitigation strategies include:
+
 - Drawing cooler water from other sources  
 - Scheduling maintenance outside summer months  
 - Implementing demand management during extreme heat events

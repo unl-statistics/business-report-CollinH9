@@ -4,7 +4,7 @@ title: "Results"
 
 ## Study Sample Characteristics and Descriptive Statistics
 
-The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama, and electricity demand data from the U.S. Energy Information Administration (EIA).
+The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage], and electricity demand data from the U.S. Energy Information Administration (EIA) [@EIA].
 
 ## Water Temperature Data
 
