@@ -6,7 +6,7 @@ book:
   title: "Evaluation of Dauphin Island Power Plant"
   author: "Collin Henkel"
   page-footer:
-    left: "Copyright 2025, Author Name"
+    left: "Copyright 2026, Collin Henkel"
   chapters:
     - index.qmd
     - intro.qmd
