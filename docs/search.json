@@ -58,7 +58,7 @@
     "href": "summary.html",
     "title": "2  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "text": "This report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.\nTwo publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned, and summarized using graphically and descriptively.\nThe results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.\nConclusion: The plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.\nRecommendations:\n\nEvaluate possible other cooling strategies to reduce dependence on the gulf\nIncorporate temperature risk into planning for future operations\n\nOverall, this analysis indicates that rising water temperatures are a risk that should be accounted for in future planning and decision-making.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
     ]
@@ -186,7 +186,7 @@
   {
     "objectID": "results.html",
     "href": "results.html",
-    "title": "3  Draft: Results",
+    "title": "3  Results",
     "section": "",
     "text": "3.1 Study Sample Characteristics and Descriptive Statistics\nThe analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama, and electricity demand data from the U.S. Energy Information Administration (EIA).",
     "crumbs": [
@@ -206,7 +206,7 @@
   {
     "objectID": "results.html#water-temperature-data",
     "href": "results.html#water-temperature-data",
-    "title": "3  Draft: Results",
+    "title": "3  Results",
     "section": "3.2 Water Temperature Data",
     "text": "3.2 Water Temperature Data\nThe water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in Figure 3.1. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.\nThe data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.",
     "crumbs": [
@@ -216,7 +216,7 @@
   {
     "objectID": "results.html#electricity-demand-data",
     "href": "results.html#electricity-demand-data",
-    "title": "3  Draft: Results",
+    "title": "3  Results",
     "section": "3.3 Electricity Demand Data",
     "text": "3.3 Electricity Demand Data\nThe electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.",
     "crumbs": [
@@ -226,7 +226,7 @@
   {
     "objectID": "results.html#primary-analysis",
     "href": "results.html#primary-analysis",
-    "title": "3  Draft: Results",
+    "title": "3  Results",
     "section": "3.4 Primary Analysis",
     "text": "3.4 Primary Analysis\nThe primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.\nThe analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.\nFigure 3.1 shows the time series of water temperature observations.\n\nggplot(temp_clean, aes(datetime, temp_f)) +\n  geom_line() +\n  geom_hline(yintercept = 85, linetype = \"dashed\") +\n  labs(\n    title = \"Water Temperature at Dauphin Island\",\n    x = \"Time\",\n    y = \"Temperature (°F)\"\n  )\n\n\n\n\n\n\n\nFigure 3.1: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.\n\n\n\n\n\n\nmean(temp_clean$temp_f &gt; 85)\n\n[1] 0.2017871\n\n\nSummary statistics reveal that water temperature exceeded 85°F on approximately 20% of observations.",
     "crumbs": [
@@ -236,9 +236,9 @@
   {
     "objectID": "results.html#secondary-analysis",
     "href": "results.html#secondary-analysis",
-    "title": "3  Draft: Results",
+    "title": "3  Results",
     "section": "3.5 Secondary Analysis",
-    "text": "3.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in Figure 3.2 indicate days when water temperatures exceeded the 85°F threshold.\n\ndaily_temp &lt;- temp_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(temp = max(temp_f, na.rm = TRUE))\n\n# daily demand\ndaily_demand &lt;- demand_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(demand = mean(demand_mw, na.rm = TRUE))\n\n# combine\nplot_data &lt;- left_join(daily_temp, daily_demand, by = \"date\")\n\n# reshape for faceting\nplot_long &lt;- plot_data %&gt;%\n  pivot_longer(\n    cols = c(temp, demand),\n    names_to = \"variable\",\n    values_to = \"value\"\n  )\n\nggplot(plot_long, aes(date, value)) +\n\n  # highlight hot days\n  geom_rect(\n    data = plot_data %&gt;% filter(temp &gt; 85),\n    aes(xmin = date, xmax = date + 1, ymin = -Inf, ymax = Inf),\n    inherit.aes = FALSE,\n    fill = \"red\",\n    alpha = 0.1\n  ) +\n\n  geom_line() +\n\n  facet_wrap(~variable, ncol = 1, scales = \"free_y\") +\n\n  labs(\n    title = \"Water Temperature and Electricity Demand\",\n    x = \"Date\",\n    y = NULL\n  ) +\n\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 3.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 3.2 shows that many of these days coincide with periods of higher electricity demand.\nThese results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.",
+    "text": "3.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in Figure 3.2 indicate days when water temperatures exceeded the 85°F threshold.\n\n#daily temp\ndaily_temp &lt;- temp_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(temp = max(temp_f, na.rm = TRUE))\n\n#daily demand\ndaily_demand &lt;- demand_clean %&gt;%\n  mutate(date = as.Date(datetime)) %&gt;%\n  group_by(date) %&gt;%\n  summarize(demand = mean(demand_mw, na.rm = TRUE))\n\n#combine\nplot_data &lt;- left_join(daily_temp, daily_demand, by = \"date\")\n\n#reshape for faceting\nplot_long &lt;- plot_data %&gt;%\n  pivot_longer(\n    cols = c(temp, demand),\n    names_to = \"variable\",\n    values_to = \"value\"\n  )\n\nggplot(plot_long, aes(date, value)) +\n\n#highlight hot days\n  geom_rect(\n    data = plot_data %&gt;% filter(temp &gt; 85),\n    aes(xmin = date, xmax = date + 1, ymin = -Inf, ymax = Inf),\n    inherit.aes = FALSE,\n    fill = \"red\",\n    alpha = 0.1\n  ) +\n\n  geom_line() +\n\n  facet_wrap(~variable, ncol = 1, scales = \"free_y\") +\n\n  labs(\n    title = \"Water Temperature and Electricity Demand\",\n    x = \"Date\",\n    y = NULL\n  ) +\n\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 3.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 3.2 shows that many of these days coincide with periods of higher electricity demand.\nThese results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
     ]
@@ -251,6 +251,16 @@
     "text": "3.6 Note to add second half of 2025 later\n\n\n\n\n\n\nNote\n\n\n\nMake sure you’re finishing your results section by evaluating what the results mean in the context of the problem.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Draft: Results</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Evaluation of ",
+    "section": "",
+    "text": "Preface\nYou are a data scientist for a mid-sized business, in a small group of 3-4 data scientists. You’ve been tasked with creating a report evaluating a scenario for your business. Your colleagues will also be evaluating the same scenario, and your reports will be used in aggregate to determine a consensus (or lack thereof) on the company’s action. The reports will also be used to inform downsizing that is rumored to be coming - you want to ensure your report is better than your peers so that you aren’t as easy to cut.\nYou may talk to your peers who are assigned the same scenario, but you do not want to collaborate too closely, lest you both become targets of the rumored layoffs.\n\nI’ve scaffolded this report for you to make this process easier - as we talk about different sections of a report in class and read about how to create similar sections, you will practice by writing the equivalent section of your report.\nThe basic steps for this task are as follows:\n\nIdentify the research question from the business question\nIdentify data set(s) which are (1) publicly available (you don’t have a budget to pay for private data) and (2) relevant to your task\n\n(HW Week 6) Document your data sets in draft-data-doc.qmd\n\nConduct a statistical analysis to support your answer to your research and business questions\n\nWrite a methods section for your business report corresponding to your statistical analysis\n(HW Week 9) Draft of results section of business report with relevant graphics/visual aids in draft-results.qmd\n\nWrite your report\n\n(HW Week 10) Draft of Intro/Conclusion sections in draft-intro-conclusions.qmd\n(HW Week 11) Draft of Executive summary section in draft-exec-summary.qmd\n\nRevise your report\n\n(HW Week 12 – not turned in) Revise your report\n(HW Week 13) - Rough draft of report due. Create one or more qmd files for your report (you can overwrite or delete intro.qmd and summary.qmd), include the names of each file (in order) in _quarto.yml. You should use references (edit references.bib and use pandoc citations). Make sure your report compiles and looks reasonable in both html and pdf.\nDevelop a presentation to go along with your report (Week 13). Create slides for your report using quarto.\n\nPeer revise reports\n\nPeer revise reports\n(HW Week 14) - Make edits to your report from comments received from peer review\n\nFinal report & presentation due",
+    "crumbs": [
+      "Preface"
     ]
   }
 ]

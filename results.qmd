@@ -1,5 +1,5 @@
 ---
-title: "Draft: Results"
+title: "Results"
 ---
 
 ## Study Sample Characteristics and Descriptive Statistics

@@ -13,6 +13,7 @@ book:
     - summary.qmd
     - results.qmd
     - references.qmd
+    - conclusion.qmd
   appendices:
     - draft-data-doc.qmd
     - draft-results.qmd

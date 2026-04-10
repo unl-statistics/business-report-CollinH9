@@ -1,3 +1,11 @@
 # Introduction
 
+Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.
 
+Previous research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed]
+In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed]
+This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.
+
+This study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.
+
+To address this question, data from the National Oceanic and Atmospheric Administration (NOAA) and the U.S. Energy Information Administration (EIA) are analyzed [how?] to evaluate temperature and demand trends.
