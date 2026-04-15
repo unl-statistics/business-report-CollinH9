@@ -16,10 +16,10 @@ Every figure and table should be referenced appropriately in the text using dyna
 
 ## Water Temperature Data
 
-The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
+The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp-draft. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
 
 ```{r, include=FALSE}
-#| label: fig-dauphin-island-temp
+#| label: fig-dauphin-island-temp-draft
 #| fig-cap: A caption for this figure.
 library(tidyverse)
 library(lubridate)

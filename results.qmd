@@ -69,7 +69,7 @@ The analysis identifies the frequency and duration of observations where water t
 
 @fig-dauphin-island-temp shows the time series of water temperature observations.
 
-```{r, include=FALSE}
+```{r, echo=FALSE}
 #| label: fig-dauphin-island-temp
 #| fig-cap: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
 ggplot(temp_clean, aes(datetime, temp_f)) +
@@ -94,7 +94,7 @@ The secondary analysis examines electricity demand patterns during periods when 
 
 Dates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in @fig-temp-demand indicate days when water temperatures exceeded the 85°F threshold.
 
-```{r, include=FALSE}
+```{r, echo=FALSE}
 #| label: fig-temp-demand
 #| fig-cap: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.
 

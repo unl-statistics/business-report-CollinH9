@@ -278,11 +278,11 @@ div.csl-indent {
 
 <section id="study-sample-characteristics-and-descriptive-statistics" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="study-sample-characteristics-and-descriptive-statistics"><span class="header-section-number">3.1</span> Study Sample Characteristics and Descriptive Statistics</h2>
-<p>The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama <span class="citation" data-cites="usdepartmentofcommerceNDBCStationPage">(<a href="#ref-usdepartmentofcommerceNDBCStationPage" role="doc-biblioref">US Department of Commerce n.d.</a>)</span>, and electricity demand data from the U.S. Energy Information Administration (EIA) <span class="citation" data-cites="EIA">(<a href="#ref-EIA" role="doc-biblioref"><span>“Real-Time <span>Operating Grid</span> - <span>U</span>.<span>S</span>. <span>Energy Information Administration</span> (<span>EIA</span>)”</span> n.d.</a>)</span>.</p>
+<p>The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama <span class="citation" data-cites="usdepartmentofcommerceNDBCStationPage">(<a href="references.html#ref-usdepartmentofcommerceNDBCStationPage" role="doc-biblioref">US Department of Commerce n.d.</a>)</span>, and electricity demand data from the U.S. Energy Information Administration (EIA) <span class="citation" data-cites="EIA">(<a href="references.html#ref-EIA" role="doc-biblioref"><span>“Real-Time <span>Operating Grid</span> - <span>U</span>.<span>S</span>. <span>Energy Information Administration</span> (<span>EIA</span>)”</span> n.d.</a>)</span>.</p>
 </section>
 <section id="water-temperature-data" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="water-temperature-data"><span class="header-section-number">3.2</span> Water Temperature Data</h2>
-<p>The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in <a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dauphin-island-temp</span></a>. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
+<p>The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in <a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
 <p>The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.</p>
 </section>
 <section id="electricity-demand-data" class="level2" data-number="3.3">
@@ -293,7 +293,21 @@ div.csl-indent {
 <h2 data-number="3.4" class="anchored" data-anchor-id="primary-analysis"><span class="header-section-number">3.4</span> Primary Analysis</h2>
 <p>The primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.</p>
 <p>The analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.</p>
-<p><a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dauphin-island-temp</span></a> shows the time series of water temperature observations.</p>
+<p><a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> shows the time series of water temperature observations.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dauphin-island-temp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dauphin-island-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="results_files/figure-html/fig-dauphin-island-temp-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dauphin-island-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(temp_clean<span class="sc">$</span>temp_f <span class="sc">&gt;</span> <span class="dv">85</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -305,12 +319,26 @@ div.csl-indent {
 <section id="secondary-analysis" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="secondary-analysis"><span class="header-section-number">3.5</span> Secondary Analysis</h2>
 <p>The secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.</p>
-<p>Dates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-temp-demand</span></a> indicate days when water temperatures exceeded the 85°F threshold.</p>
-<p>High water temperature days occur primarily during the summer portion of the electricity demand curve. <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-temp-demand</span></a> shows that many of these days coincide with periods of higher electricity demand.</p>
+<p>Dates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> indicate days when water temperatures exceeded the 85°F threshold.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-temp-demand" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="results_files/figure-html/fig-temp-demand-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>High water temperature days occur primarily during the summer portion of the electricity demand curve. <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> shows that many of these days coincide with periods of higher electricity demand.</p>
 <p>These results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-EIA" class="csl-entry" role="listitem">
 <span>“Real-Time <span>Operating Grid</span> - <span>U</span>.<span>S</span>. <span>Energy Information Administration</span> (<span>EIA</span>).”</span> n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.
 </div>
