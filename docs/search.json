@@ -125,5 +125,15 @@
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
     ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed] In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed] This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) (US Department of Commerce n.d.) and the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.) are analyzed graphically to evaluate temperature and demand trends.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   }
 ]
