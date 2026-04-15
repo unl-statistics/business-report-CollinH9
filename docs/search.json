@@ -135,5 +135,25 @@
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "“Real-Time Operating Grid -\nU.S. Energy Information\nAdministration (EIA).” n.d.\nhttps://www.eia.gov/electricity/gridmonitor/index.php. Accessed February\n20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric\nAdministration. n.d. “NDBC Station Page.”\nhttps://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed\nFebruary 20, 2026.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "4  Conclusion",
+    "section": "",
+    "text": "This analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, may have to operate at reduced capacity due to elevated Gulf water temperatures. Water temperature data from NOAA and electricity demand data from the EIA were used to identify periods where water temperature exceeded 85°F and compare those periods to electricity demand.\nThe results show that water temperatures above 85°F occur primarily during summer months and often go on for consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.\nThese findings suggest an operational risk during peak summer conditions. Reduced generating capacity during periods of elevated demand could increase system strain.\nThis analysis is subject to several limitations. It assumes that the 85°F threshold is fixed and doesn’t account for potential operational changes within the plant. Also, the demand data represents regional averages rather than being specific to the plant. Future conditions were inferred from recent 2025 observations rather than a forecasting model.\nDespite these limitations, the analysis provides reasonable information for planning. The results indicate that high-temperature risk is seasonal and predictable, allowing mitigation to be performed during summer months.\n\n\n\n\n\n\nImportantExecutive Takeaways\n\n\n\n\nWater temperatures above 85°F occur regularly during summer months\n\nThese periods overlap with higher electricity demand\n\nReduced plant capacity is most likely during peak summer demand\n\nSeasonal mitigation strategies could reduce operational risk\n\n\n\nPotential mitigation strategies include:\n\nDrawing cooler water from other sources\n\nScheduling maintenance outside summer months\n\nImplementing demand management during extreme heat events",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
   }
 ]
