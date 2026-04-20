@@ -1,5 +1,35 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Evaluation of Dauphin Island Power Plant",
+    "section": "",
+    "text": "Preface\nYou are a data scientist for a mid-sized business, in a small group of 3-4 data scientists. You’ve been tasked with creating a report evaluating a scenario for your business. Your colleagues will also be evaluating the same scenario, and your reports will be used in aggregate to determine a consensus (or lack thereof) on the company’s action. The reports will also be used to inform downsizing that is rumored to be coming - you want to ensure your report is better than your peers so that you aren’t as easy to cut.\nYou may talk to your peers who are assigned the same scenario, but you do not want to collaborate too closely, lest you both become targets of the rumored layoffs.\n\nI’ve scaffolded this report for you to make this process easier - as we talk about different sections of a report in class and read about how to create similar sections, you will practice by writing the equivalent section of your report.\nThe basic steps for this task are as follows:\n\nIdentify the research question from the business question\nIdentify data set(s) which are (1) publicly available (you don’t have a budget to pay for private data) and (2) relevant to your task\n\n(HW Week 6) Document your data sets in draft-data-doc.qmd\n\nConduct a statistical analysis to support your answer to your research and business questions\n\nWrite a methods section for your business report corresponding to your statistical analysis\n(HW Week 9) Draft of results section of business report with relevant graphics/visual aids in draft-results.qmd\n\nWrite your report\n\n(HW Week 10) Draft of Intro/Conclusion sections in draft-intro-conclusions.qmd\n(HW Week 11) Draft of Executive summary section in draft-exec-summary.qmd\n\nRevise your report\n\n(HW Week 12 – not turned in) Revise your report\n(HW Week 13) - Rough draft of report due. Create one or more qmd files for your report (you can overwrite or delete intro.qmd and summary.qmd), include the names of each file (in order) in _quarto.yml. You should use references (edit references.bib and use pandoc citations). Make sure your report compiles and looks reasonable in both html and pdf.\nDevelop a presentation to go along with your report (Week 13). Create slides for your report using quarto.\n\nPeer revise reports\n\nPeer revise reports\n(HW Week 14) - Make edits to your report from comments received from peer review\n\nFinal report & presentation due",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed] In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed] This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) (US Department of Commerce n.d.) and the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.) are analyzed graphically to evaluate temperature and demand trends.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Executive Summary",
+    "section": "",
+    "text": "This report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.\nTwo publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned, and summarized using graphically and descriptively.\nThe results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.\nConclusion: The plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.\nRecommendations:\n\nEvaluate possible other cooling strategies to reduce dependence on the gulf\nIncorporate temperature risk into planning for future operations\n\nOverall, this analysis indicates that rising water temperatures are a risk that should be accounted for in future planning and decision-making.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Executive Summary</span>"
+    ]
+  },
+  {
     "objectID": "results.html",
     "href": "results.html",
     "title": "3  Results",
@@ -47,6 +77,81 @@
     "text": "3.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in Figure 3.2 indicate days when water temperatures exceeded the 85°F threshold.\n\n\n\n\n\n\n\n\nFigure 3.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 3.2 shows that many of these days coincide with periods of higher electricity demand.\nThese results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "4  Conclusion",
+    "section": "",
+    "text": "This analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, may have to operate at reduced capacity due to elevated Gulf water temperatures. Water temperature data from NOAA and electricity demand data from the EIA were used to identify periods where water temperature exceeded 85°F and compare those periods to electricity demand.\nThe results show that water temperatures above 85°F occur primarily during summer months and often go on for consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.\nThese findings suggest an operational risk during peak summer conditions. Reduced generating capacity during periods of elevated demand could increase system strain.\nThis analysis is subject to several limitations. It assumes that the 85°F threshold is fixed and doesn’t account for potential operational changes within the plant. Also, the demand data represents regional averages rather than being specific to the plant. Future conditions were inferred from recent 2025 observations rather than a forecasting model.\nDespite these limitations, the analysis provides reasonable information for planning. The results indicate that high-temperature risk is seasonal and predictable, allowing mitigation to be performed during summer months.\n\n\n\n\n\n\nImportantExecutive Takeaways\n\n\n\n\nWater temperatures above 85°F occur regularly during summer months\n\nThese periods overlap with higher electricity demand\n\nReduced plant capacity is most likely during peak summer demand\n\nSeasonal mitigation strategies could reduce operational risk\n\n\n\nPotential mitigation strategies include:\n\nDrawing cooler water from other sources\n\nScheduling maintenance outside summer months\n\nImplementing demand management during extreme heat events",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "“Real-Time Operating Grid -\nU.S. Energy Information\nAdministration (EIA).” n.d.\nhttps://www.eia.gov/electricity/gridmonitor/index.php. Accessed February\n20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric\nAdministration. n.d. “NDBC Station Page.”\nhttps://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed\nFebruary 20, 2026.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html",
+    "href": "draft-data-doc.html",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "A.1 1) Gulf Water Temperature Data (Dauphin Island, AL)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#gulf-water-temperature-data-dauphin-island-al",
+    "href": "draft-data-doc.html#gulf-water-temperature-data-dauphin-island-al",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "A.1.1 Dataset\nPrimary dataset: NOAA National Data Buoy Center (NDBC) station DPHA1 Variable of interest: WTMP = Water Temperature (degrees Celsius)\n\n\nA.1.2 Who collected the data\nThe data was collected by the National Oceanic and Atmospheric Administration (NOAA), specifically the National Data Buoy Center (NDBC).\n\n\nA.1.3 Why the data was collected\nNDBC stations provide operational marine observations to help with weather forecasting, ocean monitoring, navigation safety, and climate research.\n\n\nA.1.4 What the data is about\nThe dataset contains observations from station DPHA1 near Dauphin Island, Alabama.\nKey variables relevant to this project:\n\nYY, MM, DD, hh, mm — date and time components\n\nWTMP (°C) — water temperature\n\n\n\nA.1.5 When the data was collected\nData is typically recorded at hourly intervals. Records go back back multiple decades, allowing trend analysis.\n\n\nA.1.6 Where the data was collected\nDauphin Island Sea Lab station (DPHA1), Alabama, Gulf of Mexico.\n\n\nA.1.7 How the data was collected\nWater temperature is measured using sensors mounted at the monitoring station.\n\n\nA.1.8 Structure of the data\nThe dataset is provided as a table. Each row represents a timestamped observation. Columns represent variables of interest that can be made into graphs.\n\n\nA.1.9 Formatting decisions and missing values\nMissing values are encoded using blank entries. These must be cleaned before analysis.\nWater temperature is recorded in degrees Celsius and will need to be converted to Fahrenheit to evaluate the 85°F threshold.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#electricity-demand-data-alabama-southeast-region",
+    "href": "draft-data-doc.html#electricity-demand-data-alabama-southeast-region",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "A.2 2) Electricity Demand Data (Alabama / Southeast Region)",
+    "text": "A.2 2) Electricity Demand Data (Alabama / Southeast Region)\n\nA.2.1 Dataset\nPrimary dataset: U.S. Energy Information Administration (EIA) Form EIA-930 Hourly Grid Monitor\nVariable of interest: Demand (MW) — actual electricity demand\n\n\nA.2.2 Who collected the data\nThe data was collected by the U.S. Energy Information Administration (EIA) through Form EIA-930 reporting from balancing authorities.\n\n\nA.2.3 Why the data exist\nThe dataset provides public transparency.\n\n\nA.2.4 What the data are about\nThe dataset contains hourly electricity demand and generation statistics for balancing authorities across the United States.\nKey variables:\n\nBalancing Authority\nLocal Time at End of Hour\nDemand (MW)\nDemand Forecast (MW)\nNet Generation (MW)\n\nFor this project, demand data for Alabama or the relevant balancing authority serving the Gulf region will be used.\n\n\nA.2.5 When the data were collected\nData is available on an hour to hour basis and updated daily. Historical data extends back multiple years.\n\n\nA.2.6 Where the data were collected\nReported at the balancing authority level covering Alabama and the Southeast region.\n\n\nA.2.7 How the data were collected\nBalancing authorities report operational grid data to EIA through automated submissions under Form EIA-930.\n\n\nA.2.8 Structure of the data\nThe dataset is presented graphically, but it’s available in many file formats such as CSV. Each row represents one balancing authority-hour observation. Columns represent demand, generation, and related grid measures.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#relevance-to-scenario",
+    "href": "draft-data-doc.html#relevance-to-scenario",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "A.3 Relevance to Scenario",
+    "text": "A.3 Relevance to Scenario\nThe NOAA water temperature dataset allows us to estimate the frequency and duration of periods when Gulf water temperature exceeds 85°F.\nThe EIA electricity demand dataset allows us to see whether these high-temperature periods correlate with peak electricity demand.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html#footnotes",
+    "href": "draft-data-doc.html#footnotes",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "This is how you add a footnote in quarto↩︎",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
     ]
   },
   {
@@ -127,33 +232,25 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "draft-intro-conclusions.html",
+    "href": "draft-intro-conclusions.html",
+    "title": "Appendix C — Draft: Intro/Conclusions",
     "section": "",
-    "text": "Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed] In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed] This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) (US Department of Commerce n.d.) and the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.) are analyzed graphically to evaluate temperature and demand trends.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "text": "D Introduction\nElectric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed] In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed] This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) and the U.S. Energy Information Administration (EIA) are analyzed [how?] to evaluate temperature and demand trends.\n\n\nE Conclusion\nThis analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, will be forced to operate at reduced capacity due to elevated water temperatures. The results show that water temperatures exceeding 85°F occur primarily during summer months.\nThese high temperature periods overlap with times of increased electricity demand. This suggests that the plant may face increased strain during critical times.\nOverall, the findings indicate risk of reduced operating capacity within the next five years. This risk is most clear during peak summer demand, when system resilience is most important.\n\n\n\n\n\n\nNote\n\n\n\nCan you think of some possible solutions to investigate? e.g. drawing water from more depth (cooler) or improving thermal efficiency elsewhere in the plant?\nYou need a bit more text here – recap, weaknesses of the model, limiting assumptions, and how does this report help an executive make some decisions? Once you have more text, increase how skimmable this is by putting some stuff in a box for an executive to focus on.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "draft-exec-summary.html",
+    "href": "draft-exec-summary.html",
+    "title": "Appendix D — Draft: Executive Summary",
     "section": "",
-    "text": "“Real-Time Operating Grid -\nU.S. Energy Information\nAdministration (EIA).” n.d.\nhttps://www.eia.gov/electricity/gridmonitor/index.php. Accessed February\n20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric\nAdministration. n.d. “NDBC Station Page.”\nhttps://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed\nFebruary 20, 2026.",
+    "text": "This report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.\nTwo publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned, and summarized using graphically and descriptively.\nThe results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.\nConclusion: The plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.\nRecommendations: - Evaluate possible other cooling strategies to reduce dependence on the gulf - Incorporate temperature risk into planning for future operations\nOverall, this analysis indicates that rising water temperatures are a risk that should be accounted for in future planning and decision-making.",
     "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "conclusion.html",
-    "href": "conclusion.html",
-    "title": "4  Conclusion",
-    "section": "",
-    "text": "This analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, may have to operate at reduced capacity due to elevated Gulf water temperatures. Water temperature data from NOAA and electricity demand data from the EIA were used to identify periods where water temperature exceeded 85°F and compare those periods to electricity demand.\nThe results show that water temperatures above 85°F occur primarily during summer months and often go on for consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.\nThese findings suggest an operational risk during peak summer conditions. Reduced generating capacity during periods of elevated demand could increase system strain.\nThis analysis is subject to several limitations. It assumes that the 85°F threshold is fixed and doesn’t account for potential operational changes within the plant. Also, the demand data represents regional averages rather than being specific to the plant. Future conditions were inferred from recent 2025 observations rather than a forecasting model.\nDespite these limitations, the analysis provides reasonable information for planning. The results indicate that high-temperature risk is seasonal and predictable, allowing mitigation to be performed during summer months.\n\n\n\n\n\n\nImportantExecutive Takeaways\n\n\n\n\nWater temperatures above 85°F occur regularly during summer months\n\nThese periods overlap with higher electricity demand\n\nReduced plant capacity is most likely during peak summer demand\n\nSeasonal mitigation strategies could reduce operational risk\n\n\n\nPotential mitigation strategies include:\n\nDrawing cooler water from other sources\n\nScheduling maintenance outside summer months\n\nImplementing demand management during extreme heat events",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conclusion</span>"
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
     ]
   }
 ]
