@@ -2,7 +2,7 @@
 title: "Results"
 ---
 
-## Study Sample Characteristics and Descriptive Statistics
+## Study Sample Characteristics
 
 The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage], and electricity demand data from the U.S. Energy Information Administration (EIA) [@EIA].
 
@@ -82,12 +82,6 @@ ggplot(temp_clean, aes(datetime, temp_f)) +
   )
 ```
 
-```{r}
-mean(temp_clean$temp_f > 85)
-```
-
-Summary statistics reveal that water temperature exceeded 85°F on approximately 20% of observations.
-
 ## Secondary Analysis
 
 The secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.
@@ -147,4 +141,38 @@ ggplot(plot_long, aes(date, value)) +
 
 High water temperature days occur primarily during the summer portion of the electricity demand curve. @fig-temp-demand shows that many of these days coincide with periods of higher electricity demand.
 
-These results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.
+These results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand.
+
+## Summary Statistics
+
+The following table summarizes key statistics from the temperature and demand data.
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-summary
+#| tbl-cap: Summary statistics for water temperature and electricity demand.
+library(knitr)
+
+summary_table <- data.frame(
+  Metric = c(
+    "Percent of hours > 85°F",
+    "Maximum temperature (°F)",
+    "Average temperature (°F)",
+    "Average electricity demand (MW)",
+    "Avg demand on >85°F days (MW)"
+  ),
+  Value = c(
+    round(mean(temp_clean$temp_f > 85) * 100, 1),
+    round(max(temp_clean$temp_f, na.rm = TRUE), 1),
+    round(mean(temp_clean$temp_f, na.rm = TRUE), 1),
+    round(mean(demand_clean$demand_mw, na.rm = TRUE), 0),
+    round(plot_data %>% filter(temp > 85) %>% pull(demand) %>% mean(na.rm=TRUE), 0)
+  )
+)
+
+kable(summary_table)
+```
+
+@tbl-summary summarizes key components of temperature and demand values. 
+The results highlight that high-temperatures are not rare, occurring in a many portions of the observations, and that peak temperatures reach well above the 85°F threshold. 
+These summary statistics provide context for how frequently and how severely the threshold is exceeded.
+In addition, average electricity demand during high-temperature days is elevated relative to overall demand levels, indicating that periods of reduced cooling capacity are likely to coincide with increased system load.

@@ -30,63 +30,113 @@
     ]
   },
   {
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "3  Methods",
+    "section": "",
+    "text": "3.1 Data Sources\nWater temperature data were obtained from NOAA station DPHA1 near Dauphin Island, Alabama (US Department of Commerce n.d.). Electricity demand data were obtained from the U.S. Energy Information Administration (EIA-930) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
+    ]
+  },
+  {
+    "objectID": "methods.html#data-processing",
+    "href": "methods.html#data-processing",
+    "title": "3  Methods",
+    "section": "3.2 Data Processing",
+    "text": "3.2 Data Processing\nWater temperature data was cleaned by removing missing values. Temperatures were converted from degrees Celsius to degrees Fahrenheit to evaluate the 85°F operational threshold.\nElectricity demand data from two 2025 datasets were combined. Datetime variables were constructed using date and hour information, and rows with missing values were removed.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
+    ]
+  },
+  {
+    "objectID": "methods.html#variable-construction",
+    "href": "methods.html#variable-construction",
+    "title": "3  Methods",
+    "section": "3.3 Variable Construction",
+    "text": "3.3 Variable Construction\nTwo key variables were created from the temperature data:\n\nStep-level temperature (°F) for hourly observations\n\nDaily maximum temperature (°F) for identifying high-temperature days\n\nElectricity demand was aggregated to daily average demand (MW) to align with temperature data.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
+    ]
+  },
+  {
+    "objectID": "methods.html#analysis-approach",
+    "href": "methods.html#analysis-approach",
+    "title": "3  Methods",
+    "section": "3.4 Analysis Approach",
+    "text": "3.4 Analysis Approach\nThe primary analysis evaluated the frequency and duration of observations where water temperature exceeded 85°F.\nThe secondary analysis compared daily temperature and electricity demand by identifying days where temperature exceeded 85°F and examining how these periods aligned with demand patterns.\nThe results were visualized using time series plots and summary statistics.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
+    ]
+  },
+  {
     "objectID": "results.html",
     "href": "results.html",
-    "title": "3  Results",
+    "title": "4  Results",
     "section": "",
-    "text": "3.1 Study Sample Characteristics and Descriptive Statistics\nThe analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama (US Department of Commerce n.d.), and electricity demand data from the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.).",
+    "text": "4.1 Study Sample Characteristics\nThe analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama (US Department of Commerce n.d.), and electricity demand data from the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
     "objectID": "results.html#water-temperature-data",
     "href": "results.html#water-temperature-data",
-    "title": "3  Results",
-    "section": "3.2 Water Temperature Data",
-    "text": "3.2 Water Temperature Data\nThe water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in Figure 3.1. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.\nThe data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.",
+    "title": "4  Results",
+    "section": "4.2 Water Temperature Data",
+    "text": "4.2 Water Temperature Data\nThe water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in Figure 4.1. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.\nThe data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
     "objectID": "results.html#electricity-demand-data",
     "href": "results.html#electricity-demand-data",
-    "title": "3  Results",
-    "section": "3.3 Electricity Demand Data",
-    "text": "3.3 Electricity Demand Data\nThe electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.",
+    "title": "4  Results",
+    "section": "4.3 Electricity Demand Data",
+    "text": "4.3 Electricity Demand Data\nThe electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
     "objectID": "results.html#primary-analysis",
     "href": "results.html#primary-analysis",
-    "title": "3  Results",
-    "section": "3.4 Primary Analysis",
-    "text": "3.4 Primary Analysis\nThe primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.\nThe analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.\nFigure 3.1 shows the time series of water temperature observations.\n\n\n\n\n\n\n\n\nFigure 3.1: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.\n\n\n\n\n\n\nmean(temp_clean$temp_f &gt; 85)\n\n[1] 0.2017871\n\n\nSummary statistics reveal that water temperature exceeded 85°F on approximately 20% of observations.",
+    "title": "4  Results",
+    "section": "4.4 Primary Analysis",
+    "text": "4.4 Primary Analysis\nThe primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.\nThe analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.\nFigure 4.1 shows the time series of water temperature observations.\n\n\n\n\n\n\n\n\nFigure 4.1: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
     "objectID": "results.html#secondary-analysis",
     "href": "results.html#secondary-analysis",
-    "title": "3  Results",
-    "section": "3.5 Secondary Analysis",
-    "text": "3.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in Figure 3.2 indicate days when water temperatures exceeded the 85°F threshold.\n\n\n\n\n\n\n\n\nFigure 3.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 3.2 shows that many of these days coincide with periods of higher electricity demand.\nThese results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand. This suggests that the plant may be forced to reduce capacity during times when electricity demand is elevated.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "title": "4  Results",
+    "section": "4.5 Secondary Analysis",
+    "text": "4.5 Secondary Analysis\nThe secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.\nDates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in Figure 4.2 indicate days when water temperatures exceeded the 85°F threshold.\n\n\n\n\n\n\n\n\nFigure 4.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.\n\n\n\n\n\nHigh water temperature days occur primarily during the summer portion of the electricity demand curve. Figure 4.2 shows that many of these days coincide with periods of higher electricity demand.\nThese results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "results.html#summary-statistics",
+    "href": "results.html#summary-statistics",
+    "title": "4  Results",
+    "section": "4.6 Summary Statistics",
+    "text": "4.6 Summary Statistics\nThe following table summarizes key statistics from the temperature and demand data.\n\n\n\n\nTable 4.1: Summary statistics for water temperature and electricity demand.\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\nPercent of hours &gt; 85°F\n20.2\n\n\nMaximum temperature (°F)\n92.5\n\n\nAverage temperature (°F)\n72.1\n\n\nAverage electricity demand (MW)\n9263.0\n\n\nAvg demand on &gt;85°F days (MW)\n10160.0\n\n\n\n\n\n\n\n\nTable 4.1 summarizes key components of temperature and demand values. The results highlight that high-temperatures are not rare, occurring in a many portions of the observations, and that peak temperatures reach well above the 85°F threshold. These summary statistics provide context for how frequently and how severely the threshold is exceeded. In addition, average electricity demand during high-temperature days is elevated relative to overall demand levels, indicating that periods of reduced cooling capacity are likely to coincide with increased system load.\n\n\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” n.d. https://www.eia.gov/electricity/gridmonitor/index.php. Accessed February 20, 2026.\n\n\nUS Department of Commerce, National Oceanic and Atmospheric Administration. n.d. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=dpha1. Accessed February 20, 2026.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
   },
   {
     "objectID": "conclusion.html",
     "href": "conclusion.html",
-    "title": "4  Conclusion",
+    "title": "5  Conclusion",
     "section": "",
     "text": "This analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, may have to operate at reduced capacity due to elevated Gulf water temperatures. Water temperature data from NOAA and electricity demand data from the EIA were used to identify periods where water temperature exceeded 85°F and compare those periods to electricity demand.\nThe results show that water temperatures above 85°F occur primarily during summer months and often go on for consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.\nThese findings suggest an operational risk during peak summer conditions. Reduced generating capacity during periods of elevated demand could increase system strain.\nThis analysis is subject to several limitations. It assumes that the 85°F threshold is fixed and doesn’t account for potential operational changes within the plant. Also, the demand data represents regional averages rather than being specific to the plant. Future conditions were inferred from recent 2025 observations rather than a forecasting model.\nDespite these limitations, the analysis provides reasonable information for planning. The results indicate that high-temperature risk is seasonal and predictable, allowing mitigation to be performed during summer months.\n\n\n\n\n\n\nImportantExecutive Takeaways\n\n\n\n\nWater temperatures above 85°F occur regularly during summer months\n\nThese periods overlap with higher electricity demand\n\nReduced plant capacity is most likely during peak summer demand\n\nSeasonal mitigation strategies could reduce operational risk\n\n\n\nPotential mitigation strategies include:\n\nDrawing cooler water from other sources\n\nScheduling maintenance outside summer months\n\nImplementing demand management during extreme heat events",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conclusion</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
     ]
   },
   {
