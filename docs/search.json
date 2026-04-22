@@ -34,7 +34,7 @@
     "href": "methods.html",
     "title": "3  Methods",
     "section": "",
-    "text": "3.1 Data Sources\nWater temperature data were obtained from NOAA station DPHA1 near Dauphin Island, Alabama (US Department of Commerce n.d.). Electricity demand data were obtained from the U.S. Energy Information Administration (EIA-930) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.).",
+    "text": "3.1 Data Sources\nWater temperature data was obtained from NOAA station DPHA1 near Dauphin Island, Alabama (US Department of Commerce n.d.). Electricity demand data was obtained from the U.S. Energy Information Administration (EIA-930) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” n.d.).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
     ]

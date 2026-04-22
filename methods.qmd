@@ -2,7 +2,7 @@
 
 ## Data Sources
 
-Water temperature data were obtained from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage]. Electricity demand data were obtained from the U.S. Energy Information Administration (EIA-930) [@EIA].
+Water temperature data was obtained from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage]. Electricity demand data was obtained from the U.S. Energy Information Administration (EIA-930) [@EIA].
 
 ## Data Processing
 
