@@ -24,7 +24,7 @@
     "href": "intro.html",
     "title": "2  Introduction",
     "section": "",
-    "text": "Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed] In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed] This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) (Administration 2026) and the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” 2026) are analyzed graphically to evaluate temperature and demand trends.\n\n\n\n\nAdministration, National Oceanic and Atmospheric. 2026. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” 2026. https://www.eia.gov/electricity/gridmonitor/index.php.",
+    "text": "Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.\nPrevious research and data show that water temperature varies seasonally and can become quite high during summer, particularly in regions such as the Gulf of Mexico. [citation needed] In addition, electricity demand tends to increase during the summer due to increased cooling needs. [citation needed] This overlap creates potential stress on power systems when both supply constraints and demand pressures happen simultaneously.\nThis study aims to assess the risk that a coastal power plant near Dauphin Island, Alabama will need to operate at reduced capacity. Specifically, it looks at the frequency and timing of high water temperature and compares these periods with patterns in regional electricity demand.\nTo address this question, data from the National Oceanic and Atmospheric Administration (NOAA) (National Oceanic and Atmospheric Administration 2026) and the U.S. Energy Information Administration (EIA) (U.S. Energy Information Administration 2026) are analyzed graphically to evaluate temperature and demand trends.\n\n\n\n\nNational Oceanic and Atmospheric Administration. 2026. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\nU.S. Energy Information Administration. 2026. “Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” https://www.eia.gov/electricity/gridmonitor/index.php.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -34,7 +34,7 @@
     "href": "methods.html",
     "title": "3  Methods",
     "section": "",
-    "text": "3.1 Data Sources\nWater temperature data was obtained from NOAA station DPHA1 near Dauphin Island, Alabama (Administration 2026). Electricity demand data was obtained from the U.S. Energy Information Administration (EIA-930) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” 2026).",
+    "text": "3.1 Data Sources\nWater temperature data was obtained from NOAA station DPHA1 near Dauphin Island, Alabama (National Oceanic and Atmospheric Administration 2026). Electricity demand data was obtained from the U.S. Energy Information Administration (EIA-930) (U.S. Energy Information Administration 2026).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "methods.html#analysis-approach",
     "title": "3  Methods",
     "section": "3.4 Analysis Approach",
-    "text": "3.4 Analysis Approach\nThe primary analysis evaluated the frequency and duration of observations where water temperature exceeded 85°F.\nThe secondary analysis compared daily temperature and electricity demand by identifying days where temperature exceeded 85°F and examining how these periods aligned with demand patterns.\nThe results were visualized using time series plots and summary statistics.\n\n\n\n\nAdministration, National Oceanic and Atmospheric. 2026. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” 2026. https://www.eia.gov/electricity/gridmonitor/index.php.",
+    "text": "3.4 Analysis Approach\nThe primary analysis evaluated the frequency and duration of observations where water temperature exceeded 85°F.\nThe secondary analysis compared daily temperature and electricity demand by identifying days where temperature exceeded 85°F and examining how these periods aligned with demand patterns.\nThe results were visualized using time series plots and summary statistics.\n\n\n\n\nNational Oceanic and Atmospheric Administration. 2026. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\nU.S. Energy Information Administration. 2026. “Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” https://www.eia.gov/electricity/gridmonitor/index.php.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
     ]
@@ -74,7 +74,7 @@
     "href": "results.html",
     "title": "4  Results",
     "section": "",
-    "text": "4.1 Study Sample Characteristics\nThe analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama (Administration 2026), and electricity demand data from the U.S. Energy Information Administration (EIA) (“Real-Time Operating Grid - U.S. Energy Information Administration (EIA)” 2026).",
+    "text": "4.1 Study Sample Characteristics\nThe analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama (National Oceanic and Atmospheric Administration 2026), and electricity demand data from the U.S. Energy Information Administration (EIA) (U.S. Energy Information Administration 2026).",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
@@ -124,7 +124,7 @@
     "href": "results.html#summary-statistics",
     "title": "4  Results",
     "section": "4.6 Summary Statistics",
-    "text": "4.6 Summary Statistics\nThe following table summarizes key statistics from the temperature and demand data.\n\n\n\n\nTable 4.1: Summary statistics for water temperature and electricity demand.\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\nPercent of hours &gt; 85°F\n20.2\n\n\nMaximum temperature (°F)\n92.5\n\n\nAverage temperature (°F)\n72.1\n\n\nAverage electricity demand (MW)\n9263.0\n\n\nAvg demand on &gt;85°F days (MW)\n10160.0\n\n\n\n\n\n\n\n\nTable 4.1 summarizes key components of temperature and demand values. The results highlight that high-temperatures are not rare, occurring in a many portions of the observations, and that peak temperatures reach well above the 85°F threshold. These summary statistics provide context for how frequently and how severely the threshold is exceeded. In addition, average electricity demand during high-temperature days is elevated relative to overall demand levels, indicating that periods of reduced cooling capacity are likely to coincide with increased system load.\n\n\n\n\nAdministration, National Oceanic and Atmospheric. 2026. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\n“Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” 2026. https://www.eia.gov/electricity/gridmonitor/index.php.",
+    "text": "4.6 Summary Statistics\nThe following table summarizes key statistics from the temperature and demand data.\n\n\n\n\nTable 4.1: Summary statistics for water temperature and electricity demand.\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\nPercent of hours &gt; 85°F\n20.2\n\n\nMaximum temperature (°F)\n92.5\n\n\nAverage temperature (°F)\n72.1\n\n\nAverage electricity demand (MW)\n9263.0\n\n\nAvg demand on &gt;85°F days (MW)\n10160.0\n\n\n\n\n\n\n\n\nTable 4.1 summarizes key components of temperature and demand values. The results highlight that high-temperatures are not rare, occurring in a many portions of the observations, and that peak temperatures reach well above the 85°F threshold. These summary statistics provide context for how frequently and how severely the threshold is exceeded. In addition, average electricity demand during high-temperature days is elevated relative to overall demand levels, indicating that periods of reduced cooling capacity are likely to coincide with increased system load.\n\n\n\n\nNational Oceanic and Atmospheric Administration. 2026. “NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\nU.S. Energy Information Administration. 2026. “Real-Time Operating Grid - U.S. Energy Information Administration (EIA).” https://www.eia.gov/electricity/gridmonitor/index.php.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
@@ -144,7 +144,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Administration, National Oceanic and Atmospheric. 2026.\n“NDBC Station Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\n“Real-Time Operating Grid -\nU.S. Energy Information\nAdministration (EIA).” 2026. https://www.eia.gov/electricity/gridmonitor/index.php.",
+    "text": "National Oceanic and Atmospheric Administration. 2026. “NDBC\nStation Page.” https://www.ndbc.noaa.gov/station_page.php?station=DPHA1.\n\n\nU.S. Energy Information Administration. 2026. “Real-Time\nOperating Grid - U.S.\nEnergy Information Administration\n(EIA).” https://www.eia.gov/electricity/gridmonitor/index.php.",
     "crumbs": [
       "References"
     ]
