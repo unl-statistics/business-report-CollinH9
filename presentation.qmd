@@ -1,7 +1,6 @@
 ---
 title: "Evaluation of Dauphin Island Power Plant"
 author: "Collin Henkel"
-output-dir: docs
 format:
   revealjs:
     theme: simple
