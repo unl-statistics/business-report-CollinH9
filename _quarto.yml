@@ -20,7 +20,6 @@ book:
     - draft-results.qmd
     - draft-intro-conclusions.qmd
     - draft-exec-summary.qmd
-    - presentation.qmd
 
 bibliography: references.bib
 

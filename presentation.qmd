@@ -6,14 +6,33 @@ format:
     theme: simple
 ---
 
+## Scenario: Coastal Power Plant Risk
+
+::: columns
+
+::: {.column width="50%"}
+
+- Location: Dauphin Island, Alabama (Gulf of Mexico)  
+- Coastal power plant uses ocean water for cooling  
+- Cooling efficiency decreases as water temperature rises  
+
+:::
+
+::: {.column width="50%"}
+
+![](Dauphin Island.jpg){width=150%}
+
+:::
+
+:::
+
+---
+
 ## Why this matters
 
 - Power plants rely on water for cooling  
-- Efficiency drops at high temperatures  
+- Efficiency drops at high temperatures (85°F)
 - Demand peaks during extreme heat  
-
-**Key constraint:**  
-- Above **85°F**, cooling efficiency decreases  
 
 **Question:**  
 What happens when this occurs during peak demand?
@@ -41,6 +60,7 @@ Key threshold: **85°F water temperature**
 ## Approach
 
 - Convert temperature to °F
+- Standardize date and time across data sets
 - Remove missing and irregular data
 - Identify periods > 85°F  
 - Compare with electricity demand  
@@ -80,22 +100,27 @@ temp_clean <- temp %>%
   )
 ```
 ```{r}
+#| label: tbl-dauphin-island-chart
+#| tbl-cap: Head of the cleaned temperature data collected from NOAA
+
 knitr::kable(head(temp_clean[, c("datetime", "temp_f")]))
 ```
 
 ---
 
-```{r}
+## Temperature Distruibution
+
+```{r, echo=FALSE}
+#| label: fig-dauphin-island-histogram
+#| fig-cap: Histogram of all recorded temperatures at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
 library(ggplot2)
 
 ggplot(temp_clean, aes(temp_f)) +
   geom_histogram(bins = 40) +
-  geom_vline(xintercept = 85, linetype = "dashed") +
-  labs(title = "Distribution of Water Temperature")
+  geom_vline(xintercept = 85, linetype = "dashed", color = "red")
 ```
 
 ## Water Temperature Over Time
-
 
 ```{r, echo=FALSE}
 #| label: fig-dauphin-island-temp
@@ -108,9 +133,8 @@ temp_daily <- temp_clean %>%
 
 ggplot(temp_daily, aes(date, temp)) +
   geom_line() +
-  geom_hline(yintercept = 85, linetype = "dashed") +
+  geom_hline(yintercept = 85, linetype = "dashed", color = "red") +
   labs(
-    title = "Daily Maximum Water Temperature",
     x = "Date",
     y = "Temperature (°F)"
   ) +
@@ -121,8 +145,11 @@ ggplot(temp_daily, aes(date, temp)) +
 
 ## Electricity Demand Over Time
 
-```{r}
+```{r, echo=FALSE}
+#| label: fig-dauphin-island-demand
+#| fig-cap: Daily Average electricity demand from 2025 in megawatts.
 library(tidyverse)
+
 
 demand1 <- read_csv("energy.csv")
 demand2 <- read_csv("EIA930_BALANCE_2025_Jul_Dec.csv")
@@ -144,7 +171,6 @@ demand_daily <- demand_clean %>%
 ggplot(demand_daily, aes(date, demand)) +
   geom_line() +
   labs(
-    title = "Daily Average Electricity Demand (2025)",
     x = "Date",
     y = "Demand (MW)"
   ) +
@@ -198,7 +224,6 @@ ggplot(plot_long, aes(date, value)) +
   facet_wrap(~variable, ncol = 1, scales = "free_y") +
 
   labs(
-    title = "Water Temperature and Electricity Demand",
     x = "Date",
     y = NULL
   ) +
@@ -225,10 +250,13 @@ ggplot(plot_long, aes(date, value)) +
 ---
 
 ## Recommendations
-
-- Explore alternative cooling methods  
-- Plan around summer risk  
-- Consider demand management strategies  
+  
+- <span class="fragment">Explore alternative cooling methods
+  - Draw cooler water from deeper or alternative sources</span>
+- <span class="fragment">Plan around summer risk
+    - Schedule maintenance outside peak summer months</span>
+- <span class="fragment">Consider demand management strategies
+  - Reduce demand during extreme heat events</span>
 
 ---
 

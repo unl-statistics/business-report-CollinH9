@@ -8,7 +8,7 @@ The analysis uses two datasets, water temperature observations from NOAA station
 
 ## Water Temperature Data
 
-The water temperature dataset has hourly measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
+The water temperature dataset has frequent measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
 
 ```{r, include=FALSE}
 library(tidyverse)
