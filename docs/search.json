@@ -54,7 +54,7 @@
     "href": "methods.html#variable-construction",
     "title": "3  Methods",
     "section": "3.3 Variable Construction",
-    "text": "3.3 Variable Construction\nTwo key variables were created from the temperature data:\n\nStep-level temperature (°F) for hourly observations\n\nDaily maximum temperature (°F) for identifying high-temperature days\n\nElectricity demand was aggregated to daily average demand (MW) to align with temperature data.",
+    "text": "3.3 Variable Construction\nTwo key variables were created from the temperature data:\n\nStep-level temperature (°F) for half-hour observations\n\nDaily maximum temperature (°F) for identifying high-temperature days\n\nElectricity demand was aggregated to daily average demand (MW) to align with temperature data.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Methods</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "results.html#electricity-demand-data",
     "title": "4  Results",
     "section": "4.3 Electricity Demand Data",
-    "text": "4.3 Electricity Demand Data\nThe electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.",
+    "text": "4.3 Electricity Demand Data\nThe electricity demand dataset is measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "results.html#primary-analysis",
     "title": "4  Results",
     "section": "4.4 Primary Analysis",
-    "text": "4.4 Primary Analysis\nThe primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.\nThe analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.\nFigure 4.1 shows the time series of water temperature observations.\n\n\n\n\n\n\n\n\nFigure 4.1: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.",
+    "text": "4.4 Primary Analysis\nThe primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.\nThe analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.\nFigure 4.1 shows the time series of water temperature observations.\n\n\n\n\n\n\n\n\nFigure 4.1: Daily maximum water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Results</span>"
     ]

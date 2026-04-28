@@ -14,7 +14,7 @@ Electricity demand data from two 2025 datasets were combined. Datetime variables
 
 Two key variables were created from the temperature data:
 
-- **Step-level temperature (°F)** for hourly observations  
+- **Step-level temperature (°F)** for half-hour observations  
 - **Daily maximum temperature (°F)** for identifying high-temperature days  
 
 Electricity demand was aggregated to **daily average demand (MW)** to align with temperature data.

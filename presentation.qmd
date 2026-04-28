@@ -10,8 +10,14 @@ format:
 ## Why this matters
 
 - Power plants rely on water for cooling  
-- High temperatures reduce efficiency  
-- Demand is highest when it's hottest  
+- Efficiency drops at high temperatures  
+- Demand peaks during extreme heat  
+
+**Key constraint:**  
+- Above **85°F**, cooling efficiency decreases  
+
+**Question:**  
+What happens when this occurs during peak demand?
 
 ---
 
@@ -28,7 +34,7 @@ Key threshold: **85°F water temperature**
 - NOAA (water temperature)
 - EIA (electricity demand)
 
-- Hourly observations  
+- Frequent observations  
 - Year: 2025  
 
 ---
@@ -44,9 +50,73 @@ Focus: timing and overlap
 
 ---
 
+## Example of data
+
+```{r, include=FALSE}
+library(tidyverse)
+library(lubridate)
+
+temp <- read_table(
+  "water_temp.txt",
+  comment = "#"
+)
+
+temp_clean <- temp %>%
+  mutate(
+    YY = as.integer(YY),
+    MM = as.integer(MM),
+    DD = as.integer(DD),
+    hh = as.integer(hh),
+    mm = as.integer(mm),
+    WTMP = as.numeric(WTMP)
+  ) %>%
+  filter(
+    !is.na(WTMP),
+    WTMP > -5,
+    WTMP < 40
+  ) %>%
+  mutate(
+    datetime = lubridate::make_datetime(YY, MM, DD, hh, mm),
+    temp_f = WTMP * 9/5 + 32
+  )
+```
+```{r}
+knitr::kable(head(temp_clean[, c("datetime", "temp_f")]))
+```
+
+---
+
+```{r}
+library(ggplot2)
+
+ggplot(temp_clean, aes(temp_f)) +
+  geom_histogram(bins = 40) +
+  geom_vline(xintercept = 85, linetype = "dashed") +
+  labs(title = "Distribution of Water Temperature")
+```
+
 ## Water Temperature Over Time
 
-![](docs/results_files/figure-html/fig-dauphin-island-temp-1.png)
+
+```{r, echo=FALSE}
+#| label: fig-dauphin-island-temp
+#| fig-cap: Daily maximum water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
+
+temp_daily <- temp_clean %>%
+  mutate(date = as.Date(datetime)) %>%
+  group_by(date) %>%
+  summarize(temp = max(temp_f, na.rm = TRUE))
+
+ggplot(temp_daily, aes(date, temp)) +
+  geom_line() +
+  geom_hline(yintercept = 85, linetype = "dashed") +
+  labs(
+    title = "Daily Maximum Water Temperature",
+    x = "Date",
+    y = "Temperature (°F)"
+  ) +
+  theme_minimal()
+```
 
 ---
 
@@ -86,13 +156,62 @@ ggplot(demand_daily, aes(date, demand)) +
 
 ## Temperature vs Demand
 
-![](docs/results_files/figure-html/fig-temp-demand-1.png)
+```{r, echo=FALSE}
+#| label: fig-temp-demand
+#| fig-cap: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.
+
+#daily temp
+daily_temp <- temp_clean %>%
+  mutate(date = as.Date(datetime)) %>%
+  group_by(date) %>%
+  summarize(temp = max(temp_f, na.rm = TRUE))
+
+#daily demand
+daily_demand <- demand_clean %>%
+  mutate(date = as.Date(datetime)) %>%
+  group_by(date) %>%
+  summarize(demand = mean(demand_mw, na.rm = TRUE))
+
+#combine
+plot_data <- left_join(daily_temp, daily_demand, by = "date")
+
+#reshape for faceting
+plot_long <- plot_data %>%
+  pivot_longer(
+    cols = c(temp, demand),
+    names_to = "variable",
+    values_to = "value"
+  )
+
+ggplot(plot_long, aes(date, value)) +
+
+#highlight hot days
+  geom_rect(
+    data = plot_data %>% filter(temp > 85),
+    aes(xmin = date, xmax = date + 1, ymin = -Inf, ymax = Inf),
+    inherit.aes = FALSE,
+    fill = "red",
+    alpha = 0.1
+  ) +
+
+  geom_line() +
+
+  facet_wrap(~variable, ncol = 1, scales = "free_y") +
+
+  labs(
+    title = "Water Temperature and Electricity Demand",
+    x = "Date",
+    y = NULL
+  ) +
+
+  theme_minimal()
+```
 
 ---
 
 ## Key Findings
 
-- ~20% of hours exceed 85°F  
+- ~20% of observations exceed 85°F  
 - High temperatures occur in summer  
 - These periods align with higher demand  
 

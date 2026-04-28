@@ -43,7 +43,7 @@ The data shows that temperatures vary seasonally throughout the year. Lower temp
 
 ## Electricity Demand Data
 
-The electricity demand dataset is also measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.
+The electricity demand dataset is measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.
 
 ```{r, include=FALSE}
 demand1 <- read_csv("energy.csv")
@@ -71,15 +71,22 @@ The analysis identifies the frequency and duration of observations where water t
 
 ```{r, echo=FALSE}
 #| label: fig-dauphin-island-temp
-#| fig-cap: Hourly water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
-ggplot(temp_clean, aes(datetime, temp_f)) +
+#| fig-cap: Daily maximum water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
+
+temp_daily <- temp_clean %>%
+  mutate(date = as.Date(datetime)) %>%
+  group_by(date) %>%
+  summarize(temp = max(temp_f, na.rm = TRUE))
+
+ggplot(temp_daily, aes(date, temp)) +
   geom_line() +
   geom_hline(yintercept = 85, linetype = "dashed") +
   labs(
-    title = "Water Temperature at Dauphin Island",
-    x = "Time",
+    title = "Daily Maximum Water Temperature",
+    x = "Date",
     y = "Temperature (°F)"
-  )
+  ) +
+  theme_minimal()
 ```
 
 ## Secondary Analysis
