@@ -2,7 +2,7 @@
 
 Electric power systems are very sensitive to environmental conditions, particularly temperature. Power plants that rely on nearby water bodies as heat sinks may have operational constraints when water temperatures rise above certain thresholds. As climate change continues, the risk of higher water temperatures becomes a concern.
 
-![Conceptual diagram of a coastal power plant cooling system. Seawater is drawn through intake pipes and used to remove heat from the plant.](Cooler.jpg){fig-align="right" width=40%}
+![Conceptual diagram of a coastal power plant cooling system. Seawater is drawn through intake pipes and used to remove heat from the plant.](Cooler.jpg){fig-align="center" width=50%}
 
 Water temperature data from NOAA shows that temperatures vary seasonally and can become elevated during summer months [@usdepartmentofcommerceNDBCStationPage].
 
