@@ -1,6 +1,4 @@
----
-title: "Executive Summary"
----
+#Executive Summary {.unnumbered}
 
 This report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.
 

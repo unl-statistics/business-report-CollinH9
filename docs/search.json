@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Evaluation of Dauphin Island Power Plant",
     "section": "",
-    "text": "0.1 Conclusion\nThis report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.\nTwo publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned by date, and summarized using descriptive statistics and visual analysis.\nThe results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.\nThe plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.",
+    "text": "0.1 Conclusion\n#Executive Summary {.unnumbered}\nThis report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.\nTwo publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned by date, and summarized using descriptive statistics and visual analysis.\nThe results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.\nThe plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Executive Summary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Conclusion</span>"
     ]
   },
   {
@@ -16,7 +16,7 @@
     "section": "0.2 Recommendations",
     "text": "0.2 Recommendations\n\nEvaluate possible other cooling strategies to reduce dependence on the gulf\nIncorporate temperature risk into planning for future operations\n\nOverall, this analysis indicates that rising water temperatures are a risk that should be accounted for in future planning and decision-making.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Executive Summary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Conclusion</span>"
     ]
   },
   {
