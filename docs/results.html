@@ -133,12 +133,6 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Executive Summary</span></span></a>
   </div>
 </li>
@@ -218,11 +212,11 @@ div.csl-indent {
    
   <ul>
   <li><a href="#study-sample-characteristics" id="toc-study-sample-characteristics" class="nav-link active" data-scroll-target="#study-sample-characteristics"><span class="header-section-number">4.1</span> Study Sample Characteristics</a></li>
-  <li><a href="#water-temperature-data" id="toc-water-temperature-data" class="nav-link" data-scroll-target="#water-temperature-data"><span class="header-section-number">4.2</span> Water Temperature Data</a></li>
-  <li><a href="#electricity-demand-data" id="toc-electricity-demand-data" class="nav-link" data-scroll-target="#electricity-demand-data"><span class="header-section-number">4.3</span> Electricity Demand Data</a></li>
-  <li><a href="#primary-analysis" id="toc-primary-analysis" class="nav-link" data-scroll-target="#primary-analysis"><span class="header-section-number">4.4</span> Primary Analysis</a></li>
-  <li><a href="#secondary-analysis" id="toc-secondary-analysis" class="nav-link" data-scroll-target="#secondary-analysis"><span class="header-section-number">4.5</span> Secondary Analysis</a></li>
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">4.6</span> Summary Statistics</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">4.2</span> Summary Statistics</a></li>
+  <li><a href="#water-temperature-data" id="toc-water-temperature-data" class="nav-link" data-scroll-target="#water-temperature-data"><span class="header-section-number">4.3</span> Water Temperature Data</a></li>
+  <li><a href="#electricity-demand-data" id="toc-electricity-demand-data" class="nav-link" data-scroll-target="#electricity-demand-data"><span class="header-section-number">4.4</span> Electricity Demand Data</a></li>
+  <li><a href="#primary-analysis" id="toc-primary-analysis" class="nav-link" data-scroll-target="#primary-analysis"><span class="header-section-number">4.5</span> Primary Analysis</a></li>
+  <li><a href="#secondary-analysis" id="toc-secondary-analysis" class="nav-link" data-scroll-target="#secondary-analysis"><span class="header-section-number">4.6</span> Secondary Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -252,58 +246,8 @@ div.csl-indent {
 <h2 data-number="4.1" class="anchored" data-anchor-id="study-sample-characteristics"><span class="header-section-number">4.1</span> Study Sample Characteristics</h2>
 <p>The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama <span class="citation" data-cites="usdepartmentofcommerceNDBCStationPage">(<a href="references.html#ref-usdepartmentofcommerceNDBCStationPage" role="doc-biblioref">National Oceanic and Atmospheric Administration 2026</a>)</span>, and electricity demand data from the U.S. Energy Information Administration (EIA) <span class="citation" data-cites="EIA">(<a href="references.html#ref-EIA" role="doc-biblioref">U.S. Energy Information Administration 2026</a>)</span>.</p>
 </section>
-<section id="water-temperature-data" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="water-temperature-data"><span class="header-section-number">4.2</span> Water Temperature Data</h2>
-<p>The water temperature dataset has frequent measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in <a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
-<p>The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.</p>
-</section>
-<section id="electricity-demand-data" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="electricity-demand-data"><span class="header-section-number">4.3</span> Electricity Demand Data</h2>
-<p>The electricity demand dataset is measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.</p>
-</section>
-<section id="primary-analysis" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="primary-analysis"><span class="header-section-number">4.4</span> Primary Analysis</h2>
-<p>The primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.</p>
-<p>The analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.</p>
-<p><a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> shows the time series of water temperature observations.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-dauphin-island-temp" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-dauphin-island-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="results_files/figure-html/fig-dauphin-island-temp-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dauphin-island-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Daily maximum water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="secondary-analysis" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="secondary-analysis"><span class="header-section-number">4.5</span> Secondary Analysis</h2>
-<p>The secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.</p>
-<p>Dates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> indicate days when water temperatures exceeded the 85°F threshold.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-temp-demand" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-temp-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="results_files/figure-html/fig-temp-demand-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>High water temperature days occur primarily during the summer portion of the electricity demand curve. <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> shows that many of these days coincide with periods of higher electricity demand.</p>
-<p>These results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand.</p>
-</section>
-<section id="summary-statistics" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">4.6</span> Summary Statistics</h2>
+<section id="summary-statistics" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">4.2</span> Summary Statistics</h2>
 <p>The following table summarizes key statistics from the temperature and demand data.</p>
 <div class="cell">
 <div id="tbl-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -348,7 +292,57 @@ Table&nbsp;4.1: Summary statistics for water temperature and electricity demand.
 </figure>
 </div>
 </div>
-<p><a href="#tbl-summary" class="quarto-xref">Table&nbsp;<span>4.1</span></a> summarizes key components of temperature and demand values. The results highlight that high-temperatures are not rare, occurring in a many portions of the observations, and that peak temperatures reach well above the 85°F threshold. These summary statistics provide context for how frequently and how severely the threshold is exceeded. In addition, average electricity demand during high-temperature days is elevated relative to overall demand levels, indicating that periods of reduced cooling capacity are likely to coincide with increased system load.</p>
+<p><a href="#tbl-summary" class="quarto-xref">Table&nbsp;<span>4.1</span></a> summarizes key components of temperature and demand values. The summary statistics indicate that temperatures exceeding 85°F are not rare and occur frequently during the observed period. Maximum temperatures substantially exceed the operational threshold, indicating potential for sustained stress on cooling systems. Additionally, average electricity demand is higher on days exceeding 85°F compared to overall demand, suggesting that reduced cooling efficiency is likely to coincide with periods of elevated system load.</p>
+</section>
+<section id="water-temperature-data" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="water-temperature-data"><span class="header-section-number">4.3</span> Water Temperature Data</h2>
+<p>The water temperature dataset has frequent measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in <a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.</p>
+<p>The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.</p>
+</section>
+<section id="electricity-demand-data" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="electricity-demand-data"><span class="header-section-number">4.4</span> Electricity Demand Data</h2>
+<p>The electricity demand dataset is measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.</p>
+</section>
+<section id="primary-analysis" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="primary-analysis"><span class="header-section-number">4.5</span> Primary Analysis</h2>
+<p>The primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.</p>
+<p>The analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appears in clusters of consecutive hours and days.</p>
+<p><a href="#fig-dauphin-island-temp" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> shows the time series of water temperature observations.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dauphin-island-temp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dauphin-island-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="results_files/figure-html/fig-dauphin-island-temp-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dauphin-island-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Daily maximum water temperature at Dauphin Island in 2025. The dashed line marks the 85°F operational threshold.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="secondary-analysis" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="secondary-analysis"><span class="header-section-number">4.6</span> Secondary Analysis</h2>
+<p>The secondary analysis examines electricity demand patterns during periods when water temperatures exceed 85°F.</p>
+<p>Dates with water temperatures above 85°F were identified and overlaid on the electricity demand time series. Shaded regions in <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> indicate days when water temperatures exceeded the 85°F threshold.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-temp-demand" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="results_files/figure-html/fig-temp-demand-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Daily maximum water temperature (top) and average electricity demand (bottom). Shaded regions indicate days when water temperature exceeded 85°F.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>High water temperature days occur primarily during the summer portion of the electricity demand curve. <a href="#fig-temp-demand" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> shows that many of these days coincide with periods of higher electricity demand.</p>
+<p>These results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

@@ -9,7 +9,6 @@ book:
     left: "Copyright 2026, Collin Henkel"
   chapters:
     - index.qmd
-    - summary.qmd
     - intro.qmd
     - methods.qmd
     - results.qmd

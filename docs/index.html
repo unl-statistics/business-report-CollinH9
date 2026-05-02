@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./intro.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Executive Summary</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,12 +113,6 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Executive Summary</span></span></a>
   </div>
 </li>
@@ -197,7 +191,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link active" data-scroll-target="#conclusion"><span class="header-section-number">0.1</span> Conclusion</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations"><span class="header-section-number">0.2</span> Recommendations</a></li>
   </ul>
 </nav>
     </div>
@@ -229,42 +224,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>You are a data scientist for a mid-sized business, in a small group of 3-4 data scientists. You’ve been tasked with creating a report evaluating a scenario for your business. Your colleagues will also be evaluating the same scenario, and your reports will be used in aggregate to determine a consensus (or lack thereof) on the company’s action. The reports will also be used to inform downsizing that is rumored to be coming - you want to ensure your report is better than your peers so that you aren’t as easy to cut.</p>
-<p>You may talk to your peers who are assigned the same scenario, but you do not want to collaborate too closely, lest you both become targets of the rumored layoffs.</p>
-<hr>
-<p>I’ve scaffolded this report for you to make this process easier - as we talk about different sections of a report in class and read about how to create similar sections, you will practice by writing the equivalent section of your report.</p>
-<p>The basic steps for this task are as follows:</p>
+<p>This report evaluates the risk that a coastal power plant near Dauphin Island, Alabama will be forced to operate at reduced capacity due to elevated gulf water temperatures. The plant relies on water from the gulf as a heat sink and has to reduce output when temperatures exceed 85°F. The goal of this analysis is to see how often this threshold is exceeded and whether these periods correlate with electricity demand.</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="Dauphin Island.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Map of Dauphin Island, Alabama, the Gulf Coast location used for the power plant risk scenario.</figcaption>
+</figure>
+</div>
+<p>Two publicly available datasets were analyzed in order to address this. Water temperature data from NOAA was used to find periods when temperatures exceed the threshold. Electricity demand data from the U.S. Energy Information Administration (EIA) was used to examine when peak demand occurs. These datasets were cleaned, aligned by date, and summarized using descriptive statistics and visual analysis.</p>
+<p>The results show that water temperatures above 85°F occur often during summer months. These periods overlap with increases in electricity demand, which are likely driven by cooling needs. This creates a situation where the plant may have to reduce output at the same time demand is highest.</p>
+<section id="conclusion" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">0.1</span> Conclusion</h2>
+<p>The plant faces a strong risk of reduced operating capacity during high demand periods, especially in the summer. This overlap increases the likelihood of strain on the electrical system and reduces flexibility.</p>
+</section>
+<section id="recommendations" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">0.2</span> Recommendations</h2>
 <ul>
-<li><p>Identify the research question from the business question</p></li>
-<li><p>Identify data set(s) which are (1) publicly available (you don’t have a budget to pay for private data) and (2) relevant to your task</p>
-<ul>
-<li>(HW Week 6) Document your data sets in <code>draft-data-doc.qmd</code></li>
-</ul></li>
-<li><p>Conduct a statistical analysis to support your answer to your research and business questions</p>
-<ul>
-<li><p>Write a methods section for your business report corresponding to your statistical analysis</p></li>
-<li><p>(HW Week 9) Draft of results section of business report with relevant graphics/visual aids in <code>draft-results.qmd</code></p></li>
-</ul></li>
-<li><p>Write your report</p>
-<ul>
-<li><p>(HW Week 10) Draft of Intro/Conclusion sections in <code>draft-intro-conclusions.qmd</code></p></li>
-<li><p>(HW Week 11) Draft of Executive summary section in <code>draft-exec-summary.qmd</code></p></li>
-</ul></li>
-<li><p>Revise your report</p>
-<ul>
-<li><p>(HW Week 12 – not turned in) Revise your report</p></li>
-<li><p>(HW Week 13) - Rough draft of report due. Create one or more qmd files for your report (you can overwrite or delete intro.qmd and summary.qmd), include the names of each file (in order) in <code>_quarto.yml</code>. You should use references (edit references.bib and use pandoc citations). Make sure your report compiles and looks reasonable in both html and pdf.</p></li>
-<li><p>Develop a presentation to go along with your report (Week 13). Create slides for your report using quarto.</p></li>
-</ul></li>
-<li><p>Peer revise reports</p>
-<ul>
-<li><p>Peer revise reports</p></li>
-<li><p>(HW Week 14) - Make edits to your report from comments received from peer review</p></li>
-</ul></li>
-<li><p>Final report &amp; presentation due</p></li>
+<li>Evaluate possible other cooling strategies to reduce dependence on the gulf</li>
+<li>Incorporate temperature risk into planning for future operations</li>
 </ul>
+<p>Overall, this analysis indicates that rising water temperatures are a risk that should be accounted for in future planning and decision-making.</p>
 
 
 </section>
@@ -674,8 +653,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Executive Summary">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Executive Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

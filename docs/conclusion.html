@@ -113,12 +113,6 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Executive Summary</span></span></a>
   </div>
 </li>
@@ -192,8 +186,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link active" data-scroll-target="#limitations"><span class="header-section-number">5.1</span> Limitations</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -218,9 +218,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This analysis evaluated the risk that a coastal power plant near Dauphin Island, Alabama, may have to operate at reduced capacity due to elevated Gulf water temperatures. Water temperature data from NOAA and electricity demand data from the EIA were used to identify periods where water temperature exceeded 85°F and compare those periods to electricity demand.</p>
-<p>The results show that water temperatures above 85°F occur primarily during summer months and often go on for consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.</p>
+<p>The results show that water temperatures above 85°F occur primarily during summer months and often remain over 85 degrees for several consecutive days. These high-temperature periods overlap with higher electricity demand, which is likely driven by increased cooling needs. This overlap creates conditions where the plant may be required to reduce output at the same time electricity demand is high.</p>
 <p>These findings suggest an operational risk during peak summer conditions. Reduced generating capacity during periods of elevated demand could increase system strain.</p>
-<p>This analysis is subject to several limitations. It assumes that the 85°F threshold is fixed and doesn’t account for potential operational changes within the plant. Also, the demand data represents regional averages rather than being specific to the plant. Future conditions were inferred from recent 2025 observations rather than a forecasting model.</p>
+<section id="limitations" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="limitations"><span class="header-section-number">5.1</span> Limitations</h2>
+<p>This analysis is subject to several limitations. It assumes that the 85°F threshold is fixed and doesn’t account for potential operational changes within the plant. Also, the demand data represents regional averages rather than being specific to the plant.</p>
+<p>This analysis is limited to data from 2025, which may not fully capture long-term variability in water temperature or electricity demand. Multi-year analysis would provide a sounder estimate of risk, but the 2025 data is sufficient to illustrate seasonal patterns and potential operational concerns.</p>
 <p>Despite these limitations, the analysis provides reasonable information for planning. The results indicate that high-temperature risk is seasonal and predictable, allowing mitigation to be performed during summer months.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -245,14 +248,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Potential mitigation strategies include:</p>
 <ul>
-<li>Drawing cooler water from other sources<br>
+<li>Explore alternative cooling strategies, such as drawing cooler water from deeper or alternative intake locations<br>
 </li>
-<li>Scheduling maintenance outside summer months<br>
+<li>Plan operations around seasonal risk by scheduling maintenance outside peak summer months<br>
 </li>
-<li>Implementing demand management during extreme heat events</li>
+<li>Implement demand management strategies during extreme heat events to reduce system strain</li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

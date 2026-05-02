@@ -32,16 +32,13 @@ format:
 
 - Power plants rely on water for cooling  
 - Efficiency drops at high temperatures (85°F)
-- Demand peaks during extreme heat  
-
-**Question:**  
-What happens when this occurs during peak demand?
+- Demand peaks during extreme heat
 
 ---
 
 ## Objective
 
-Assess risk that a that the power plant must reduce output during high electricity demand  
+Assess risk that the power plant must reduce output during high electricity demand  
 
 Key threshold: **85°F water temperature**
 

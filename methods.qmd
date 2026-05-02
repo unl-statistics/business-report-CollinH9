@@ -2,22 +2,23 @@
 
 ## Data Sources
 
-Water temperature data was obtained from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage]. Electricity demand data was obtained from the U.S. Energy Information Administration (EIA-930) [@EIA].
+Water temperature data was obtained from NOAA's National Data Buoy Center station DPHA1 located near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage]. The dataset includes high-frequency observations of approximate 30-minute intervals of water temperature (WTMP), measured in degrees Celsius. These measurements are taken by buoy sensors near the ocean surface.
+
+Electricity demand data was obtained from the U.S. Energy Information Administration (EIA-930 dataset) [@EIA], which provides hourly estimates of electricity demand (MW) for balancing authorities across the United States.
 
 ## Data Processing
 
 Water temperature data was cleaned by removing missing values. Temperatures were converted from degrees Celsius to degrees Fahrenheit to evaluate the 85°F operational threshold.
 
-Electricity demand data from two 2025 datasets were combined. Datetime variables were constructed using date and hour information, and rows with missing values were removed.
+Electricity demand data from two EIA-930 datasets (January–June 2025 and July–December 2025) were combined to produce a full-year dataframe. Datetime variables were constructed using date and hour information, and rows with missing values were removed.
+
+A small number of observations with missing temperature or demand values were removed, and extreme values by bounding observations between reasonable values (specifically 23-104°F water temperature only). These values were scattered minimally throughout the dataset and did not occur in continuous chunks. No interpolation was performed, and gaps in the data were not artificially connected in visualizations.
 
 ## Variable Construction
 
-Two key variables were created from the temperature data:
+Water temperature observations were recorded at approximately 30-minute intervals. Daily maximum temperature (°F) was calculated to identify days exceeding the 85°F threshold.
 
-- **Step-level temperature (°F)** for half-hour observations  
-- **Daily maximum temperature (°F)** for identifying high-temperature days  
-
-Electricity demand was aggregated to **daily average demand (MW)** to align with temperature data.
+Electricity demand was aggregated to daily average demand (MW) to align with temperature data.
 
 ## Analysis Approach
 

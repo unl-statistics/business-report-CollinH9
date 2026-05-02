@@ -1,15 +1,6 @@
 ---
 title: "Results"
 ---
-
-## Study Sample Characteristics
-
-The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage], and electricity demand data from the U.S. Energy Information Administration (EIA) [@EIA].
-
-## Water Temperature Data
-
-The water temperature dataset has frequent measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
-
 ```{r, include=FALSE}
 library(tidyverse)
 library(lubridate)
@@ -37,15 +28,7 @@ temp_clean <- temp %>%
     datetime = lubridate::make_datetime(YY, MM, DD, hh, mm),
     temp_f = WTMP * 9/5 + 32
   )
-```
 
-The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.
-
-## Electricity Demand Data
-
-The electricity demand dataset is measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.
-
-```{r, include=FALSE}
 demand1 <- read_csv("energy.csv")
 demand2 <- read_csv("EIA930_BALANCE_2025_Jul_Dec.csv")
 
@@ -59,13 +42,73 @@ demand_clean <- demand %>%
     demand_mw = as.numeric(`Demand (MW)`)
   ) %>%
   filter(!is.na(datetime), !is.na(demand_mw))
+
+#daily temp
+daily_temp <- temp_clean %>%
+  mutate(date = as.Date(datetime)) %>%
+  group_by(date) %>%
+  summarize(temp = max(temp_f, na.rm = TRUE))
+
+#daily demand
+daily_demand <- demand_clean %>%
+  mutate(date = as.Date(datetime)) %>%
+  group_by(date) %>%
+  summarize(demand = mean(demand_mw, na.rm = TRUE))
+
+plot_data <- left_join(daily_temp, daily_demand, by = "date")
 ```
+## Study Sample Characteristics
+
+The analysis uses two datasets, water temperature observations from NOAA station DPHA1 near Dauphin Island, Alabama [@usdepartmentofcommerceNDBCStationPage], and electricity demand data from the U.S. Energy Information Administration (EIA) [@EIA].
+
+## Summary Statistics
+
+The following table summarizes key statistics from the temperature and demand data.
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-summary
+#| tbl-cap: Summary statistics for water temperature and electricity demand.
+library(knitr)
+library(tidyverse)
+
+summary_table <- data.frame(
+  Metric = c(
+    "Percent of hours > 85°F",
+    "Maximum temperature (°F)",
+    "Average temperature (°F)",
+    "Average electricity demand (MW)",
+    "Avg demand on >85°F days (MW)"
+  ),
+  Value = c(
+    round(mean(temp_clean$temp_f > 85) * 100, 1),
+    round(max(temp_clean$temp_f, na.rm = TRUE), 1),
+    round(mean(temp_clean$temp_f, na.rm = TRUE), 1),
+    round(mean(demand_clean$demand_mw, na.rm = TRUE), 0),
+    round(plot_data %>% filter(temp > 85) %>% pull(demand) %>% mean(na.rm=TRUE), 0)
+  )
+)
+
+kable(summary_table)
+```
+
+@tbl-summary summarizes key components of temperature and demand values. 
+The summary statistics indicate that temperatures exceeding 85°F are not rare and occur frequently during the observed period. Maximum temperatures substantially exceed the operational threshold, indicating potential for sustained stress on cooling systems. Additionally, average electricity demand is higher on days exceeding 85°F compared to overall demand, suggesting that reduced cooling efficiency is likely to coincide with periods of elevated system load.
+
+## Water Temperature Data
+
+The water temperature dataset has frequent measurements of water temperature (WTMP) measured in degrees Celsius. After cleaning the data and removing missing values we are left with data spanning 2025, as shown in @fig-dauphin-island-temp. Water temperature values were converted from Celsius to Fahrenheit to correspond with the 85°F threshold.
+
+The data shows that temperatures vary seasonally throughout the year. Lower temperatures occur during winter months and higher temperatures during summer. We see continuous examples of the water being above 85°F during the summer months.
+
+## Electricity Demand Data
+
+The electricity demand dataset is measured hourly, deriving electricity demand values measured in megawatts (MW). Demand levels vary throughout the day and across seasons, but higher values are observed during summer and winter months when heating and cooling are in demand.
 
 ## Primary Analysis
 
 The primary analysis looks at instances of water temperatures exceeding 85°F. These values represent periods when Gulf water temperatures reach levels associated with higher heat conditions.
 
-The analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appear in clusters of consecutive hours and days.
+The analysis identifies the frequency and duration of observations where water temperature exceeds this threshold. This occurs mainly during summer months and appears in clusters of consecutive hours and days.
 
 @fig-dauphin-island-temp shows the time series of water temperature observations.
 
@@ -149,37 +192,3 @@ ggplot(plot_long, aes(date, value)) +
 High water temperature days occur primarily during the summer portion of the electricity demand curve. @fig-temp-demand shows that many of these days coincide with periods of higher electricity demand.
 
 These results indicate that periods when water temperature exceeds 85°F often overlap with moderate to high electricity demand.
-
-## Summary Statistics
-
-The following table summarizes key statistics from the temperature and demand data.
-
-```{r, echo=FALSE, warning=FALSE}
-#| label: tbl-summary
-#| tbl-cap: Summary statistics for water temperature and electricity demand.
-library(knitr)
-
-summary_table <- data.frame(
-  Metric = c(
-    "Percent of hours > 85°F",
-    "Maximum temperature (°F)",
-    "Average temperature (°F)",
-    "Average electricity demand (MW)",
-    "Avg demand on >85°F days (MW)"
-  ),
-  Value = c(
-    round(mean(temp_clean$temp_f > 85) * 100, 1),
-    round(max(temp_clean$temp_f, na.rm = TRUE), 1),
-    round(mean(temp_clean$temp_f, na.rm = TRUE), 1),
-    round(mean(demand_clean$demand_mw, na.rm = TRUE), 0),
-    round(plot_data %>% filter(temp > 85) %>% pull(demand) %>% mean(na.rm=TRUE), 0)
-  )
-)
-
-kable(summary_table)
-```
-
-@tbl-summary summarizes key components of temperature and demand values. 
-The results highlight that high-temperatures are not rare, occurring in a many portions of the observations, and that peak temperatures reach well above the 85°F threshold. 
-These summary statistics provide context for how frequently and how severely the threshold is exceeded.
-In addition, average electricity demand during high-temperature days is elevated relative to overall demand levels, indicating that periods of reduced cooling capacity are likely to coincide with increased system load.
